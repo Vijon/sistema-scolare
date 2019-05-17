@@ -1,0 +1,64 @@
+$hole: #000;
+$glow: #0abbb2;
+$size: 50px;
+.Idle {
+    width: $size;
+    height: $size;
+
+    .c {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .s {
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+        float: left;
+        background: $hole;
+        transition: all 0.2s;
+        animation: r5 1s 0s ease-out infinite;
+    }
+    &.fast {
+        .s {
+            animation-duration: .3s;
+        }
+    }
+
+    @-webkit-keyframes r5 {
+        0% {
+            box-shadow: 0 0 8px 6px rgba($glow, .5), 0 0 0px 0px transparent, 0 0 0px 0px rgba($glow, .7);
+        }
+        10% {
+            transform:scale(1,1);
+            box-shadow: 0 0 8px 6px rgba($glow, .5), 0 0 12px 10px transparent, 0 0 12px 14px rgba($glow, .7);
+        }
+        100% {
+            box-shadow: 0 0 8px 6px rgba(255,255,255, 0), 0 0 0px 40px transparent, 0 0 0px 40px rgba(255,255,255, 0);
+        }
+    }
+    @-moz-keyframes r5 {
+        0% {
+            box-shadow: 0 0 8px 6px rgba($glow, 1), 0 0 0px 0px transparent, 0 0 0px 0px rgba($glow, 1);
+        }
+        10% {
+            box-shadow: 0 0 8px 6px rgba($glow, 1), 0 0 12px 10px transparent, 0 0 12px 14px rgba($glow, 1);
+        }
+        100% {
+            box-shadow: 0 0 8px 6px rgba(255,255,255, 0), 0 0 0px 40px transparent, 0 0 0px 40px rgba(255,255,255, 0);
+        }
+    }
+    @keyframes r5 {
+        0% {
+            box-shadow: 0 0 8px 6px rgba($glow, 1), 0 0 0px 0px transparent, 0 0 0px 0px rgba($glow, 1);
+        }
+        10% {
+            box-shadow: 0 0 8px 6px rgba($glow, 1), 0 0 12px 10px transparent, 0 0 12px 14px rgba($glow, 1);
+        }
+        100% {
+            box-shadow: 0 0 8px 6px rgba(255,255,255, 0), 0 0 0px 40px transparent, 0 0 0px 40px rgba(255,255,255, 0);
+        }
+    }
+}

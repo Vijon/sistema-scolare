@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "mysql": "mysql://root:umbertoi@localhost:3306/vijon_kids",
+  "authentication": {
+    "secret": "77b5cf30b45c2c7af9c489ba4cc6ad89d82f257ed4b9f0589c1475303e5fb96316531f59c1e8e9dfc9822e3dc1b23f5da75bab5b1a125cca4f6dc3728293f63414960b584b0136aba3f1849cc443b5ead99e37bffc5d3d702f1354d32845c8e3a0ec238abf4f6d5d8c031fd198f4d5b5d50b74aad3d812df2d439570934b1cc4f8db648cb6e678fbd5799cd64c078736e9736fef75e8de9c6d5eb85217d5ad023808ea77c682db09d13f003db5258a8645461c86c5ef80f43d6b42d205ee0678a88dbc6a8dc5d4bd70d8acec2ff75137449401c64ec576453d0ab7c99e07e8c066c6a16510d27f4ad73b75f7948b7e658a45a2ce624fb8f44fb306717b63f271",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "username",
+      "passwordField": "password"
+    }
+  }
+}

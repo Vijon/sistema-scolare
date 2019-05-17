@@ -1,0 +1,91 @@
+/*! minireset.css v0.0.4 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}img,embed,iframe,object,video{height:auto;max-width:100%}audio{max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
+
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+body {
+    font-family: 'VT323', monospace;
+}
+
+@mixin fullscreen() {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;;
+}
+
+@mixin center() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin input( ) {
+    background: none;
+    border: 2px solid #fff;
+    border-radius:8px;
+	cursor:pointer;
+	color: #fff;
+    font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+    text-decoration:none;
+    display: block;
+    width: 100%;
+    max-width: 400px;
+}
+
+@mixin btn( $text: #fff, $bg: #0abbb2 ) {
+	background:linear-gradient(to bottom, $bg 5%, #000000 100%);
+	background-color: $bg;
+    border-radius:8px;
+    border: none;
+	display:inline-block;
+	cursor:pointer;
+	color: $text;
+    font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px $bg;
+    
+    [class^="icon-"], [class*=" icon-"] {
+        vertical-align: middle;
+        font-size: 30px;
+    }
+    
+    :active {
+        position:relative;
+        top:1px;
+    }
+}
+
+$offset: 10px;
+@mixin popup() {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    color: #fff;
+    background: rgba(#000, .5);
+    backdrop-filter: blur(10px);
+
+    > nav {
+        position: absolute;
+        z-index: 10;
+        right: $offset;
+        top: $offset;
+    }
+    > .content {
+        padding: $offset;
+    }
+}
+
+@mixin bigText() {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}

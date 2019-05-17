@@ -1,0 +1,29 @@
+[
+    {
+        "id": 3,
+        "text": " Ciao Thomas 5 anni niente Ti voglio bene ci vediamo",
+        "position": {},
+        "createdAt": "2019-05-16T07:37:32.000Z",
+        "sender": "Diego"
+    },
+    {
+        "id": 1,
+        "text": "Hello from Postman",
+        "position": {
+            "x": 10,
+            "y": 10
+        },
+        "createdAt": "2019-05-16T07:26:46.000Z",
+        "sender": "Thomas"
+    },
+    {
+        "id": 2,
+        "text": "hkhjkjhkhj",
+        "position": {
+            "x": 11,
+            "y": 10
+        },
+        "createdAt": "2019-05-16T07:34:18.000Z",
+        "sender": "Thomas"
+    }
+]

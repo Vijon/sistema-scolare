@@ -1,0 +1,553 @@
+.generic-rpg-house-inn {
+    width: 70px;
+    height: 88px;
+    background: url("buildings.png") -0px -0px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-tree01 {
+    width: 53px;
+    height: 74px;
+    background: url("buildings.png") -70px -0px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-tree02 {
+    width: 53px;
+    height: 74px;
+    background: url("buildings.png") -123px -0px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-complete {
+    width: 67px;
+    height: 62px;
+    background: url("buildings.png") -0px -88px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-bridge {
+    width: 58px;
+    height: 56px;
+    background: url("buildings.png") -67px -88px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-flowers {
+    width: 56px;
+    height: 28px;
+    background: url("buildings.png") -176px -0px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-mini-lake {
+    width: 55px;
+    height: 39px;
+    background: url("buildings.png") -176px -28px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw22 {
+    width: 16px;
+    height: 48px;
+    background: url("buildings.png") -176px -67px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw23 {
+    width: 16px;
+    height: 48px;
+    background: url("buildings.png") -192px -67px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw24 {
+    width: 48px;
+    height: 16px;
+    background: url("buildings.png") -176px -115px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw25 {
+    width: 48px;
+    height: 16px;
+    background: url("buildings.png") -176px -131px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-rod {
+    width: 14px;
+    height: 33px;
+    background: url("buildings.png") -208px -67px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-rock06 {
+    width: 32px;
+    height: 13px;
+    background: url("buildings.png") -123px -74px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-trasure-open {
+    width: 25px;
+    height: 27px;
+    background: url("buildings.png") -125px -88px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-rock04 {
+    width: 26px;
+    height: 15px;
+    background: url("buildings.png") -150px -88px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-treasure-closed {
+    width: 25px;
+    height: 21px;
+    background: url("buildings.png") -125px -115px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-rock02 {
+    width: 25px;
+    height: 9px;
+    background: url("buildings.png") -70px -74px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-crate02 {
+    width: 24px;
+    height: 21px;
+    background: url("buildings.png") -150px -115px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-rock03 {
+    width: 23px;
+    height: 11px;
+    background: url("buildings.png") -208px -100px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-board03 {
+    width: 18px;
+    height: 22px;
+    background: url("buildings.png") -0px -150px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-rock05 {
+    width: 21px;
+    height: 15px;
+    background: url("buildings.png") -18px -150px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-crate01 {
+    width: 18px;
+    height: 19px;
+    background: url("buildings.png") -0px -172px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-crate03 {
+    width: 14px;
+    height: 18px;
+    background: url("buildings.png") -18px -172px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-barrel02 {
+    width: 17px;
+    height: 17px;
+    background: url("buildings.png") -32px -172px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-barrel01 {
+    width: 12px;
+    height: 17px;
+    background: url("buildings.png") -49px -172px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-board04 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -61px -172px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw01 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -77px -172px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw02 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -93px -172px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw03 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -109px -172px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw04 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -125px -172px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw05 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -141px -172px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw06 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -157px -172px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw07 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -173px -172px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw08 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -189px -172px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw09 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -205px -172px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw10 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -0px -191px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw11 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -16px -191px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw12 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -32px -191px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw13 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -48px -191px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw14 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -64px -191px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw15 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -80px -191px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw16 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -96px -191px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw17 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -112px -191px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw18 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -128px -191px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw19 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -144px -191px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw20 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -160px -191px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence-raw21 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -176px -191px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence01 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -192px -191px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence02 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -208px -191px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence03 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -0px -207px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence04 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -16px -207px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence05 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -32px -207px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence06 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -48px -207px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence07 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -64px -207px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence08 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -80px -207px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence09 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -96px -207px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence10 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -112px -207px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence11 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -128px -207px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence12 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -144px -207px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence13 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -160px -207px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fence14 {
+    width: 16px;
+    height: 16px;
+    background: url("buildings.png") -176px -207px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-board01 {
+    width: 16px;
+    height: 15px;
+    background: url("buildings.png") -39px -150px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-board02 {
+    width: 16px;
+    height: 15px;
+    background: url("buildings.png") -55px -150px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-barrel03 {
+    width: 10px;
+    height: 16px;
+    background: url("buildings.png") -222px -67px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-grass02 {
+    width: 16px;
+    height: 9px;
+    background: url("buildings.png") -155px -74px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-rock01 {
+    width: 16px;
+    height: 8px;
+    background: url("buildings.png") -95px -74px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-grass01 {
+    width: 13px;
+    height: 7px;
+    background: url("buildings.png") -150px -103px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-loot01 {
+    width: 12px;
+    height: 12px;
+    background: url("buildings.png") -71px -150px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-loot02 {
+    width: 11px;
+    height: 11px;
+    background: url("buildings.png") -83px -150px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-loot05 {
+    width: 10px;
+    height: 11px;
+    background: url("buildings.png") -222px -83px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-loot03 {
+    width: 9px;
+    height: 11px;
+    background: url("buildings.png") -94px -150px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-loot04 {
+    width: 9px;
+    height: 11px;
+    background: url("buildings.png") -103px -150px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-flower01 {
+    width: 8px;
+    height: 7px;
+    background: url("buildings.png") -224px -115px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-flower02 {
+    width: 8px;
+    height: 7px;
+    background: url("buildings.png") -224px -122px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-flower03 {
+    width: 8px;
+    height: 7px;
+    background: url("buildings.png") -224px -131px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fish04 {
+    width: 8px;
+    height: 4px;
+    background: url("buildings.png") -222px -94px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fish01 {
+    width: 7px;
+    height: 7px;
+    background: url("buildings.png") -224px -138px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fish02 {
+    width: 6px;
+    height: 3px;
+    background: url("buildings.png") -208px -111px;
+	background-size: 232px 232px;
+}
+
+.generic-rpg-fish03 {
+    width: 4px;
+    height: 4px;
+    background: url("buildings.png") -171px -74px;
+	background-size: 232px 232px;
+}
+

@@ -1,0 +1,119 @@
+.ground12 {
+    width: 114px;
+    height: 114px;
+    background: url("ground.png") -0px -0px;
+	background-size: 565px 565px;
+}
+
+.ground11 {
+    width: 113px;
+    height: 114px;
+    background: url("ground.png") -114px -0px;
+	background-size: 565px 565px;
+}
+
+.ground9 {
+    width: 113px;
+    height: 114px;
+    background: url("ground.png") -227px -0px;
+	background-size: 565px 565px;
+}
+
+.ground16 {
+    width: 114px;
+    height: 113px;
+    background: url("ground.png") -0px -114px;
+	background-size: 565px 565px;
+}
+
+.ground4 {
+    width: 114px;
+    height: 113px;
+    background: url("ground.png") -114px -114px;
+	background-size: 565px 565px;
+}
+
+.ground8 {
+    width: 114px;
+    height: 113px;
+    background: url("ground.png") -0px -227px;
+	background-size: 565px 565px;
+}
+
+.ground10 {
+    width: 112px;
+    height: 114px;
+    background: url("ground.png") -340px -0px;
+	background-size: 565px 565px;
+}
+
+.ground1 {
+    width: 113px;
+    height: 113px;
+    background: url("ground.png") -114px -227px;
+	background-size: 565px 565px;
+}
+
+.ground13 {
+    width: 113px;
+    height: 113px;
+    background: url("ground.png") -227px -227px;
+	background-size: 565px 565px;
+}
+
+.ground15 {
+    width: 113px;
+    height: 113px;
+    background: url("ground.png") -452px -0px;
+	background-size: 565px 565px;
+}
+
+.ground3 {
+    width: 113px;
+    height: 113px;
+    background: url("ground.png") -452px -113px;
+	background-size: 565px 565px;
+}
+
+.ground5 {
+    width: 113px;
+    height: 113px;
+    background: url("ground.png") -452px -226px;
+	background-size: 565px 565px;
+}
+
+.ground7 {
+    width: 113px;
+    height: 113px;
+    background: url("ground.png") -0px -340px;
+	background-size: 565px 565px;
+}
+
+.ground14 {
+    width: 112px;
+    height: 113px;
+    background: url("ground.png") -340px -114px;
+	background-size: 565px 565px;
+}
+
+.ground2 {
+    width: 112px;
+    height: 113px;
+    background: url("ground.png") -340px -227px;
+	background-size: 565px 565px;
+}
+
+.ground6 {
+    width: 112px;
+    height: 113px;
+    background: url("ground.png") -228px -114px;
+	background-size: 565px 565px;
+}
+
+.base {
+    width: 112px;
+    height: 112px;
+    background: url("ground.png") -113px -340px;
+	background-size: 565px 565px;
+}
+

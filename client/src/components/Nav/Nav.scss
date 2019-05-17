@@ -1,0 +1,32 @@
+@import "../shared";
+
+.Nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background-color: #281c3c;
+    border-top: 5px solid #1f3e5a;
+    border-bottom: 5px solid #3c1c31;
+
+    > * {
+        flex: 1;
+    }
+    > div {
+        padding: 5px;
+        text-align: center;
+        font-size: 20px;
+
+        &:first-child { background-color: #281c3c; }
+        &:last-child { background-color: #3c1c31; }
+
+        > span {
+            display: inline-block;
+            vertical-align: middle;
+            padding-right: 10px;
+        }
+    }
+}

@@ -1,0 +1,134 @@
+@import "../shared";
+
+$reduced: 50px;
+.ToolbarReduced {
+    position: fixed;
+    bottom: 10vh;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: $reduced * .6;
+    color: #000;
+    text-shadow: 2px 2px 2px #fff;
+
+    button {
+        @include btn;
+        width: 100%;
+
+        + button {
+            margin-left: 10px;
+        }
+
+        &.success {
+            @include btn(#fff, rgb(0, 163, 0));
+        }
+    }
+    &.DRAW {
+        button {
+            width: 50%;
+            margin-left: 0;
+            padding: 5px;
+            > span {
+                display: block;
+            }
+        }
+    }
+}
+
+$offset2: 30px;
+.Toolbar {
+    @include popup;
+
+    $header: 15vh;
+    $space: 2vh;
+    > header {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: $header;
+        margin-bottom: $space;
+        display: flex;
+        align-content: center;
+        padding: 10px;
+
+        > span {
+            font-size: 30px;
+            padding: 10px;
+            border-bottom: 2px solid #fff;
+            &:not(.ScopeActive) {
+                opacity: .6;
+            }
+        }
+    }
+
+    > section {
+        position: absolute;
+        left: 0;
+        top: $header + $space;
+        width: 100%;
+        bottom: 0;
+        overflow: auto;
+        padding: 10px;
+
+        > div {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+
+            > figure {
+                margin: 0;
+                border: 5px solid transparent;
+    
+                &.TileActive {
+                    //border-color: #fff;
+                    //box-shadow: 0px 0px 5px #fff;
+                    filter: drop-shadow( 0px 0px 5px #fff);
+                }
+            }
+        }
+    }
+
+    > .message {
+        position: absolute;
+        z-index: 2;
+        top: 15vh;
+        right: $offset2;
+        left: $offset2;
+        bottom: 15vh;
+        padding: 0;
+
+        textarea {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            @include bigText;
+            background: none;
+            border: none;
+        }
+    }
+
+    footer {
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        width: 100%;
+        text-align: center;
+
+        &.speechToTextToolbar {
+            top: 2vh;
+            button {
+                @include btn;
+            }
+        }
+
+        &.submit {
+            bottom: 2vh;
+            button {
+                @include btn(#fff, rgb(0, 163, 0));
+            }
+        }
+    }
+}

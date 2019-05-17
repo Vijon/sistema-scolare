@@ -1,0 +1,6 @@
+@import "../shared";
+
+.Popup {
+    @include popup;
+    @include bigText;
+}

@@ -1,0 +1,5 @@
+{
+  "host": "35.158.88.93",
+  "port": "3030",
+  "mysql": "mysql://root:umbertoi@localhost:3306/vijon_kids"
+}

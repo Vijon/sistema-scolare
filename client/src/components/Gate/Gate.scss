@@ -1,0 +1,41 @@
+@import "../shared";
+
+.Gate {
+    @include popup;
+    @include bigText;
+
+    > .content, > .bg {
+        @include fullscreen;
+    }
+    > .content {
+        z-index: 2;
+
+        > header, > footer {
+            padding: 0 20px;
+        }
+
+        > header {
+            text-align: center;
+            > img {
+                max-height: 10vh;
+            }
+        }
+        > footer {
+            position: absolute;
+            z-index: 2;
+            bottom: 10vh;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            
+            input {
+                @include input;
+            }
+
+            button {
+                @include btn;
+                width: 100%;
+            }
+        }
+    }
+}

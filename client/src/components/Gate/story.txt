@@ -1,0 +1,32 @@
+Ciao [nome]!
+Benvenuto sul mio pianeta.
+
+Ben arrivato [nome].
+Spero tu abbia fatto buon viaggio!
+
+Heilà [nome], felice di rivederti.
+------------------
+Se vuoi entrare nel mio pianeta devi scoprire chi sono!
+Devo essere sicuro che mi conosci per farti passare!
+Ti darò qualche indizio, tu scrivi il mio nome.
+------------------
+1 Ho i capelli [colore]
+2 I mie occhi sono [colore]
+3 Ho gli occhiali / Non ho gli occhiali, ci vedo benissimo!
+4 Impazzisco per [cibo]
+4 Mi piace da matti [cibo]
+5 Anche a te piace [cartone]
+6 Se hai coraggio, ti sfido a [sport]
+7 Amo troppo [squadra]
+7 Son contento solo se vedo vincere [squadra]
+8 Sono terrorizzato da [paura]
+8 Me la faccio sotto se [paura]
+8 Non mi [paura] altrimenti fuggo!
+9 Quando posso, [tempo libero]
+9 Appena ho un po' di tempo libero, mi scateno con [tempo libero]
+10 Sono un pro con [videogame]
+10 Sfidami a [videogame], mettimi alla prova
+11 Mi piace studiare [materia]
+12 Mi scateno appena parte [musica]
+12 Appena sento [musica] alzo a balla il volume
+13 Ueh zio, lo sai che [cosa bella]

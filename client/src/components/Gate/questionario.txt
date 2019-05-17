@@ -1,0 +1,22 @@
+NOME COGNOME
+DATA DI NASCITA
+SESSO [M] [F]
+
+1 Colore capelli
+2 Colore occhi
+3 Hai gli occhiali?
+4 Cibo preferito
+5 Cartone preferito
+6 Sport praticato
+7 Squadra del cuore
+8 La tua paura peggiore
+9 Cosa fai nel tempo libero?
+10 Videogiochi preferiti
+11 Materia preferita
+12 Musica preferita
+13 La cosa più bella mai capitata
+14 Hai fratelli e sorelle? Quanti?
+15 Cosa ti fa davvero tanto felice
+16 Animale preferito
+17 Hai animale domestici? Quali?
+18 Sei molto alto?
