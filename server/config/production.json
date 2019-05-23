@@ -1,5 +1,9 @@
 {
   "host": "35.158.88.93",
   "port": "3030",
-  "mysql": "mysql://root:umbertoi@localhost:3306/vijon_kids"
+  "mysql": "mysql://root:umbertoi@localhost:3306/vijon_kids",
+  "ssl": {
+    "key": "/etc/letsencrypt/live/lab.castelli.vijon.it/fullchain.pem",
+    "cert": "/etc/letsencrypt/live/lab.castelli.vijon.it/privkey.pem"
+  }
 }
