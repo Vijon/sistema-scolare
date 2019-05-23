@@ -13,10 +13,14 @@ export default function(app) {
 	    
         server = https.createServer(opts, app).listen(port);
         app.setup(server);
+
+        server.on('listening', () =>
+            logger.info('Feathers application started on https://%s:%d', app.get('host'), port)
+        );
     } else {
         server = app.listen(port);
+        server.on('listening', () =>
+            logger.info('Feathers application started on http://%s:%d', app.get('host'), port)
+        );
     }
-    server.on('listening', () =>
-        logger.info('Feathers application started on https://%s:%d', app.get('host'), port)
-    );
 }
