@@ -8,7 +8,7 @@ export default function(app) {
             cert: fs.readFileSync(app.get('ssl')['cert'])
         };
 	    
-        const server = https.createServer(opts, app);
+        const server = https.createServer(opts, app).listen(app.get('port'));
         app.setup(server);
     }
 }
