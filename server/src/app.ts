@@ -16,7 +16,6 @@ import services from './services';
 import hooks from './app.hooks';
 import channels from './channels';
 
-import ssl from './ssl';
 import sequelize from './sequelize';
 import authentication from './authentication';
 
@@ -40,7 +39,6 @@ app.configure(express.rest());
 app.configure(socketio());
 
 app.configure(sequelize);
-app.configure(ssl);
 
 // Configure other middleware (see `middleware/index.js`)
 app.configure(middleware);

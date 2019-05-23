@@ -1,8 +1,9 @@
 import app from './app';
 import logger from './logger';
+import ssl from './ssl';
 
-// simply initalize applicatin
-app;
+// attach ssl and start to listen
+app.configure(ssl);
 
 process.on('unhandledRejection', (reason, p) =>
   logger.error('Unhandled Rejection at: Promise ', p, reason)
