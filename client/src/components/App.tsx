@@ -1,6 +1,7 @@
 import * as React from "react";
 import { route } from "../services/Router";
 import { get } from '../services/Config'
+import AddHome from '../components/AddHome/AddHome';
 import Nav from '../components/Nav/Nav';
 import Splash from '../components/Splash/Splash';
 import Auth from '../containers/Auth';
@@ -107,7 +108,7 @@ class App extends React.Component<Props, State> {
         break;
         case 'UNIVERSE':
             props = { ...props };
-            return <><Nav {...navProps} /><Universe {...props} /></>
+            return <><Nav {...navProps} /><Universe {...props} /><AddHome /></>
         break;
         case 'WORLD':
             props = { ...props };

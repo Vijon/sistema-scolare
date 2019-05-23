@@ -66,13 +66,19 @@ class Universe extends React.Component<Props, State> {
     if (!planets) return null;
 
     const scrollableProps = {
+      onClick: ((pos: any) => {
+        this.setState({
+          pos
+        });
+      })
     }
 
     const rocketProps = {
       app,
       ...pos,
+      land: !!id,
       onStop: () => {
-        if (onGoto) {
+        if (onGoto && id) {
           onGoto( id );
         }
       }

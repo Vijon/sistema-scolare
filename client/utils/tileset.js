@@ -6,7 +6,7 @@ const target = __dirname + '/../public/';
 const options = {
     square: true
 }
-const scopes = ['ground', 'buildings'];
+const scopes = ['ground', 'buildings', 'characters', 'animals', 'monsters'];
 const formats = ['json', 'css'];
 scopes.forEach( scope => {
     formats.forEach( format => {

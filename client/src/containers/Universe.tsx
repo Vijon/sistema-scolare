@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { setError, setPlanets, setVisitingPlanet } from "../store/actions/app";
+import { setError, setPlanets, setVisitingPlanet, resetCurrent } from "../store/actions/app";
 import { mergeProps /*, pushPath*/ } from "./helpers";
 import { State, User, Error } from "../types";
 import Api from "../services/Api";
@@ -17,6 +17,7 @@ const mapStateToProps = (state: State) => {
 const mapDispatchToProps = (dispatch: Function) => {
     return {
         onInit: (text: string) => {
+            dispatch(resetCurrent());
             Api.service('users').find({
 
             })

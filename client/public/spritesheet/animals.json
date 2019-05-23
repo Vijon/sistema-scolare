@@ -1,0 +1,57 @@
+{
+	"meta": {
+		"image": "animals.png",
+		"size": {"w":150,"h":150},
+		"scale": "1"
+	},
+	"frames": {
+		"cow.png":
+		{
+			"frame": {"x":0,"y":0,"w":50,"h":50},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
+			"sourceSize": {"w":50,"h":50}
+		},
+		"dog.png":
+		{
+			"frame": {"x":50,"y":0,"w":50,"h":50},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
+			"sourceSize": {"w":50,"h":50}
+		},
+		"horse.png":
+		{
+			"frame": {"x":0,"y":50,"w":50,"h":50},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
+			"sourceSize": {"w":50,"h":50}
+		},
+		"pig.png":
+		{
+			"frame": {"x":50,"y":50,"w":50,"h":50},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
+			"sourceSize": {"w":50,"h":50}
+		},
+		"pigskin.png":
+		{
+			"frame": {"x":100,"y":0,"w":50,"h":50},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
+			"sourceSize": {"w":50,"h":50}
+		},
+		"sheep.png":
+		{
+			"frame": {"x":100,"y":50,"w":50,"h":50},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
+			"sourceSize": {"w":50,"h":50}
+		}
+	}
+}

@@ -24,7 +24,8 @@ interface State {
 class World extends React.Component<Props, State> {
   state = {
     map: this.props.map,
-    toolbarOpen: false
+    toolbarOpen: false,
+    pos: { x: 0, y: 0 }
   } as State;
 
   onInit(map: any) {

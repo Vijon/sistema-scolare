@@ -1,0 +1,49 @@
+.bigeye {
+    width: 50px;
+    height: 50px;
+    background: url("monsters.png") -0px -0px;
+	background-size: 150px 150px;
+}
+
+.cyclop {
+    width: 50px;
+    height: 50px;
+    background: url("monsters.png") -50px -0px;
+	background-size: 150px 150px;
+}
+
+.dragon {
+    width: 50px;
+    height: 50px;
+    background: url("monsters.png") -0px -50px;
+	background-size: 150px 150px;
+}
+
+.fire {
+    width: 50px;
+    height: 50px;
+    background: url("monsters.png") -50px -50px;
+	background-size: 150px 150px;
+}
+
+.goblin {
+    width: 50px;
+    height: 50px;
+    background: url("monsters.png") -100px -0px;
+	background-size: 150px 150px;
+}
+
+.king_skeleton {
+    width: 50px;
+    height: 50px;
+    background: url("monsters.png") -100px -50px;
+	background-size: 150px 150px;
+}
+
+.skeleton {
+    width: 50px;
+    height: 50px;
+    background: url("monsters.png") -0px -100px;
+	background-size: 150px 150px;
+}
+

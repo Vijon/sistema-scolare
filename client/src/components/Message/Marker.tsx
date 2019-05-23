@@ -31,7 +31,7 @@ class Marker extends React.Component<Props, State> {
     // private
     $sprite: any;
     render() {
-      const { type = "balloon", onOpen, position } = this.props;
+      const { type = "flag", onOpen, position } = this.props;
       const { open } = this.state;
   
       const spriteProps = {

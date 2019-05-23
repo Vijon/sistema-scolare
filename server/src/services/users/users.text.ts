@@ -20,9 +20,9 @@ export const salute_btn = () => pick([
 ]);
 
 export const intro = (user: any) => pick([
-    `Se vuoi entrare nel mio pianeta devi scoprire chi sono!`,
-    `Devo essere sicuro che mi conosci per farti passare!`,
-    `Ti darò qualche indizio, tu scrivi il mio nome.`,
+    `Se vuoi entrare nel mio pianeta devi scoprire chi sono! Scrivi il mio nome quando mi hai riconosciuto`,
+    `Devo essere sicuro che mi conosci per farti passare! Se mi riconosci scrivi il mio nome`,
+    `Ti darò qualche indizio, se scopri chi sono scrivi il mio nome.`,
 ]);
 
 export const intro_btn = () => pick([

@@ -43,6 +43,13 @@ export const setCurrent = ( id: any ) => {
     };
 };
 
+export const resetCurrent = ( ) => {
+    return {
+        type: Actions.SET_CURRENT,
+        current: null
+    };
+};
+
 export const setVisitingPlanet = (id: any) => {
     return {
         type: Actions.SET_VISITING_PLANET,

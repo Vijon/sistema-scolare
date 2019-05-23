@@ -46,7 +46,7 @@ class Splash extends React.Component<Props, State> {
                 stroke: null,
                 align: 'center',
             }),
-            text: `Benvenuti nel`,
+            text: `Alla scoperta del`,
             anchor: 0.5,
             x: Size.width/2,
             y: Size.height/2 - 100,

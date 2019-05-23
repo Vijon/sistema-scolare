@@ -22,7 +22,7 @@ class Space extends React.Component<Props, State> {
     const { app, size } = this.props;
     
     const tiles = {
-      image: require("./bg.png"),
+      image: require("./assets/bg.png"),
       width: (size || Size).width,
       height: (size || Size).height,
       tilePosition: {x: 0, y: 0} as any

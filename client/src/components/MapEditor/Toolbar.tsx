@@ -69,7 +69,7 @@ class Toolbar extends React.Component<Props, State> {
       <nav onClick={() => { if (onCancel) onCancel() } }><span className="icon-close" /></nav>
       <header>
         {scopes.map( (s, i) => (
-        <span key={i} className={s.key === scope ? 'ScopeActive' : ''} onClick={() => this.selectScope(s.key)}><span className={`icon-${s.key}`} /></span>
+        <span key={i} className={s.key === scope ? 'ScopeActive' : ''} onClick={() => this.selectScope(s.key)}>{s.label}{/*<span className={`icon-${s.key}`} />*/}</span>
         ))}
       </header>
       {scopes.map( (s, i) => s.key === scope && (
@@ -78,6 +78,7 @@ class Toolbar extends React.Component<Props, State> {
         {s.sheet.map( (tile: any, i: number) => (
           <figure key={i} className={selected === tile.path ? "TileActive" : "" } onClick={() => { this.selectTile(s.key, tile.key)  } }>
             <div className={tile.key} />
+            <strong>{tile.key}</strong>
           </figure>
         ))}
         </div>

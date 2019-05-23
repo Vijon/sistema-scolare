@@ -5,6 +5,7 @@ import Interactive from './Interactive';
 
 interface Props {
     app: any;
+    onClick?: Function;
     onSelect?: Function;
     onSelectStop?: Function;
     onMoveStart?: Function;
@@ -25,10 +26,14 @@ export default class Scrollable extends React.Component<Props, State> {
     $container: any;
 
     render() {
-        const { children, app, onSelect, onSelectStop, onMoveStart, onMove, disabled = false } = this.props;
+        const { children, app, onClick, onSelect, onSelectStop, onMoveStart, onMove, disabled = false } = this.props;
 
         const interactiveProps = {
           app,
+          onPress: ((e: any) => {
+            const current = { x: this.$container.x, y: this.$container.y };
+            if (onClick) onClick({ x: e.x - current.x, y: e.y - current.y });
+          }),
           onMoveStart: ((e: any) => {
             const { disabled = false } = this.props;
             if (e.type === "panstart") {

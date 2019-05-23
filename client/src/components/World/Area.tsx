@@ -28,7 +28,7 @@ export const Size = {
 
 const COLS = 40;
 const ROWS = 40;
-const BASE_TILE = "ground.base";
+const BASE_TILE = Tileset.BaseTile;
 
 var $pos: any;
 var $cursor: any;
@@ -129,18 +129,26 @@ class Area extends React.Component<Props, State> {
             key: i,
             anchor: 0,
         }
-        const spriteProps = {
-            texture: Tileset.tile(cell.tile).texture, // this.getTile(cell)
-            width: Size.tile,
-            height: Size.tile,
-            x: cell.col * Size.tile,
-            y: cell.row * Size.tile,
+        let $texture;
+        try {
+          $texture = Tileset.tile(cell.tile).texture; // this.getTile(cell);
+          const spriteProps = {
+              texture: $texture,
+              width: Size.tile,
+              height: Size.tile,
+              x: cell.col * Size.tile,
+              y: cell.row * Size.tile,
+          }
+          const debug = false;
+          /*return <Container {...containerProps}>
+            <Sprite {...spriteProps} />
+            {debug && <Text key={'t_' + i} style={TextStyle} x={spriteProps.x} y={spriteProps.y} text={`${cell.col} x ${cell.row}`} />}
+          </Container>*/
+          return <Sprite key={i} {...spriteProps} />
+        } catch(e) {
+          console.error( `${cell.tile} not found` )
+          return null;
         }
-        const debug = false;
-        return <Container {...containerProps}>
-          <Sprite {...spriteProps} />
-          {debug && <Text key={'t_' + i} style={TextStyle} x={spriteProps.x} y={spriteProps.y} text={`${cell.col} x ${cell.row}`} />}
-        </Container>
       } )}
       {children}
       <Sprite ref={s => $cursor = s} {...cursorProps} />

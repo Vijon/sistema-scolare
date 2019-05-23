@@ -9,6 +9,7 @@ interface Props {
   x: number;
   y: number;
   z?: number;
+  land?: boolean;
   onStop?: Function;
 }
 
@@ -53,16 +54,18 @@ class Rocket extends React.Component<Props, State> {
       const rotation = angleBetweenPoints(this.props, nextProps);
       const distance = distanceBetweenPoints(this.props, nextProps);
       this.setState({ throttle: true })
-      TweenMax.to(this.$sprite, distance * AnimationSpeed.fade, {
-        pixi: {
-          scale: .5,
-        }
-      });
-      TweenMax.to(this.$sprite, distance * AnimationSpeed.fade, {
-        pixi: {
-          scale: .2,
-        }
-      }).delay(distance * AnimationSpeed.total - distance * AnimationSpeed.fade);
+      if (nextProps.land) {
+        TweenMax.to(this.$sprite, distance * AnimationSpeed.fade, {
+          pixi: {
+            scale: .5,
+          }
+        });
+        TweenMax.to(this.$sprite, distance * AnimationSpeed.fade, {
+          pixi: {
+            scale: .2,
+          }
+        }).delay(distance * AnimationSpeed.total - distance * AnimationSpeed.fade);
+      }
       TweenMax.to(this.$sprite, distance * AnimationSpeed.total, {
         pixi: { 
           x, 

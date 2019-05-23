@@ -1,0 +1,63 @@
+.ninja {
+    width: 50px;
+    height: 51px;
+    background: url("characters.png") -0px -0px;
+	background-size: 200px 200px;
+}
+
+.blacksmith {
+    width: 50px;
+    height: 50px;
+    background: url("characters.png") -50px -0px;
+	background-size: 200px 200px;
+}
+
+.gandalf {
+    width: 50px;
+    height: 50px;
+    background: url("characters.png") -100px -0px;
+	background-size: 200px 200px;
+}
+
+.indiana_jones {
+    width: 50px;
+    height: 50px;
+    background: url("characters.png") -0px -51px;
+	background-size: 200px 200px;
+}
+
+.knight {
+    width: 50px;
+    height: 50px;
+    background: url("characters.png") -50px -51px;
+	background-size: 200px 200px;
+}
+
+.lady {
+    width: 50px;
+    height: 50px;
+    background: url("characters.png") -100px -51px;
+	background-size: 200px 200px;
+}
+
+.raiden {
+    width: 50px;
+    height: 50px;
+    background: url("characters.png") -150px -0px;
+	background-size: 200px 200px;
+}
+
+.witch {
+    width: 50px;
+    height: 50px;
+    background: url("characters.png") -150px -50px;
+	background-size: 200px 200px;
+}
+
+.wizard {
+    width: 50px;
+    height: 50px;
+    background: url("characters.png") -0px -101px;
+	background-size: 200px 200px;
+}
+

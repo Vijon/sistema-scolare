@@ -1,0 +1,42 @@
+.cow {
+    width: 50px;
+    height: 50px;
+    background: url("animals.png") -0px -0px;
+	background-size: 150px 150px;
+}
+
+.dog {
+    width: 50px;
+    height: 50px;
+    background: url("animals.png") -50px -0px;
+	background-size: 150px 150px;
+}
+
+.horse {
+    width: 50px;
+    height: 50px;
+    background: url("animals.png") -0px -50px;
+	background-size: 150px 150px;
+}
+
+.pig {
+    width: 50px;
+    height: 50px;
+    background: url("animals.png") -50px -50px;
+	background-size: 150px 150px;
+}
+
+.pigskin {
+    width: 50px;
+    height: 50px;
+    background: url("animals.png") -100px -0px;
+	background-size: 150px 150px;
+}
+
+.sheep {
+    width: 50px;
+    height: 50px;
+    background: url("animals.png") -100px -50px;
+	background-size: 150px 150px;
+}
+

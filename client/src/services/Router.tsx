@@ -20,12 +20,12 @@ const route = {
     this.trigger( current );
 
     listener = history.listen((location: any, action: any) => {
-        location = parseLocation(location)
+        location = parseLocation(location);
         if (current && location.pathname === current.pathname) {
           return;
         }
-        this.trigger( location, action );
         current = parseLocation(location);
+        this.trigger( location, action );
         // console.log(`The last navigation action was ${action}`)
     });
   },

@@ -1,11 +1,16 @@
 const SCOPES = [
-    {"key": "ground"},
-    {"key": "buildings"}
+    {"key": "ground", "label": "Blocchi"},
+    {"key": "buildings", "label": "Paesaggio"},
+    {"key": "characters", "label": "Personaggi"},
+    {"key": "animals", "label": "Animali"},
+    {"key": "monsters", "label": "Mostri"},
 ];
 
 export const Size = {
     side: 50
 }
+
+export const BaseTile = "ground.erba";
 
 var $sheets = {} as any;
 var $loaded = false;
@@ -30,7 +35,6 @@ export function load( scopes = null as any ) {
 export function get(key: string) {
     if ($sheets[key]) return Promise.resolve($sheets[key]);
     let css = require(`../../../public/spritesheet/${key}.css`);
-    console.log(css)
     return new Promise( resolve => {
         const file = `/spritesheet/${key}.json`;
         PIXI.loader

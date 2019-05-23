@@ -12,7 +12,7 @@
             "world": {
                 "planet": "astrale",
                 "pos": { "x": 200, "y": 500, "z": 0.5 },
-                "map": []
+                "map": {}
             }
         },
         {
@@ -25,7 +25,7 @@
             "world": {
                 "planet": "vulcano",
                 "pos": { "x": 10, "y": 20 },
-                "map": []
+                "map": {}
             }
         }]
     },
@@ -42,7 +42,7 @@
             "world": {
                 "planet": "astrale",
                 "pos": { "x": 550, "y": 100, "z": 0.2 },
-                "map": []
+                "map": {}
             }
         },
         {
@@ -55,7 +55,7 @@
             "world": {
                 "planet": "vulcano",
                 "pos": { "x": 10, "y": 20 },
-                "map": []
+                "map": {}
             }
         }]
     }

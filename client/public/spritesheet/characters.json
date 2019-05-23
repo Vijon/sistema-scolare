@@ -1,0 +1,81 @@
+{
+	"meta": {
+		"image": "characters.png",
+		"size": {"w":200,"h":200},
+		"scale": "1"
+	},
+	"frames": {
+		"ninja.png":
+		{
+			"frame": {"x":0,"y":0,"w":50,"h":51},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":50,"h":51},
+			"sourceSize": {"w":50,"h":51}
+		},
+		"blacksmith.png":
+		{
+			"frame": {"x":50,"y":0,"w":50,"h":50},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
+			"sourceSize": {"w":50,"h":50}
+		},
+		"gandalf.png":
+		{
+			"frame": {"x":100,"y":0,"w":50,"h":50},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
+			"sourceSize": {"w":50,"h":50}
+		},
+		"indiana_jones.png":
+		{
+			"frame": {"x":0,"y":51,"w":50,"h":50},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
+			"sourceSize": {"w":50,"h":50}
+		},
+		"knight.png":
+		{
+			"frame": {"x":50,"y":51,"w":50,"h":50},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
+			"sourceSize": {"w":50,"h":50}
+		},
+		"lady.png":
+		{
+			"frame": {"x":100,"y":51,"w":50,"h":50},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
+			"sourceSize": {"w":50,"h":50}
+		},
+		"raiden.png":
+		{
+			"frame": {"x":150,"y":0,"w":50,"h":50},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
+			"sourceSize": {"w":50,"h":50}
+		},
+		"witch.png":
+		{
+			"frame": {"x":150,"y":50,"w":50,"h":50},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
+			"sourceSize": {"w":50,"h":50}
+		},
+		"wizard.png":
+		{
+			"frame": {"x":0,"y":101,"w":50,"h":50},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
+			"sourceSize": {"w":50,"h":50}
+		}
+	}
+}
