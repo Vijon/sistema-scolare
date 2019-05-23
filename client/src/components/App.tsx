@@ -108,7 +108,7 @@ class App extends React.Component<Props, State> {
         break;
         case 'UNIVERSE':
             props = { ...props };
-            return <><Nav {...navProps} /><Universe {...props} /><AddHome /></>
+            return <><Nav {...navProps} /><Universe {...props} /></>
         break;
         case 'WORLD':
             props = { ...props };
