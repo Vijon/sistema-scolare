@@ -10,7 +10,7 @@
     color: #fff;
     background-color: #281c3c;
     border-top: 5px solid #1f3e5a;
-    border-bottom: 5px solid #3c1c31;
+    border-bottom: 5px solid #1f3e5a;
 
     > * {
         flex: 1;
@@ -20,8 +20,10 @@
         text-align: center;
         font-size: 20px;
 
-        &:first-child { background-color: #281c3c; }
-        &:last-child { background-color: #3c1c31; }
+        &:nth-child(1) { background-color: #281c3c; }
+        &:nth-child(2) { background-color: #3c1c31; }
+        &:nth-child(3) { background-color: #145051; }
+
 
         > span {
             display: inline-block;

@@ -5,11 +5,12 @@ import "./Nav.scss";
 
 interface Props {
     onClick?: Function;
+    onLogout?: Function;
 }
 
 class Nav extends React.Component<Props> {
     render() {
-        const { onClick } = this.props;
+        const { onClick, onLogout } = this.props;
 
         return (
         <nav className={classNames("Nav")}>
@@ -18,11 +19,15 @@ class Nav extends React.Component<Props> {
             </div>*/}
             <div onClick={() => { if (onClick) { onClick('editor'); } }}>
                 <span className="icon-planet" /> 
-                Il mio pianeta
+                Casa mia
             </div>
             <div onClick={() => { if (onClick) { onClick('universe'); } }}>
                 <span className="icon-rocket" /> 
                 Esplora
+            </div>
+            <div onClick={() => { if (onLogout) { onLogout(); } }}>
+                <span className="icon-close" /> 
+                Esci
             </div>
         </nav>
         );

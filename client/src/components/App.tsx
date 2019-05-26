@@ -11,6 +11,7 @@ import MapEditor from '../containers/MapEditor';
 
 interface Props {
   user?: any;
+  onLogout?: Function;
 }
 
 interface State {
@@ -85,7 +86,7 @@ class App extends React.Component<Props, State> {
   }
 
   render() {
-    const { user } = this.props;
+    const { user, onLogout} = this.props;
     const { loading, section, planet } = this.state;
     if (loading) {
       return null; //<Loading />;
@@ -95,7 +96,10 @@ class App extends React.Component<Props, State> {
     const navProps = {
       onClick: (sect: string) => {
         route.goto(sect)
-      }
+      },
+      onLogout: () => {
+        if (onLogout) onLogout();
+      },
     }
     switch (section) {
         case 'SPLASH':

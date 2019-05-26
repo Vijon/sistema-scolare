@@ -1,12 +1,13 @@
 function pick( arr: string[] ) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
-
+/*
 function trim( v: string ) {
-    // @ts-ignore
-    return v.split(' ').shift().join(' ');
+    try {
+        return v.split(' ').shift().join(' ');
+    } catch(e) {}
 }
-
+*/
 export const salute = (user: any) => pick([
     `Ciao ${user.name}!
     Benvenuto sul mio pianeta.`,

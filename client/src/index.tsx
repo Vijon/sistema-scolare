@@ -7,9 +7,8 @@ import Root from './Root';
 import { route } from "./services/Router";
 import * as PWA from './services/PWA';
 
-ReactDOM.render(<Root store={store} />, document.getElementById('root'));
-
-
 route.init();
 PWA.init();
 PWA.initAddToHome();
+
+ReactDOM.render(<Root store={store} />, document.getElementById('root'));
