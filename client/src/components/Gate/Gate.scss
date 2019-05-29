@@ -39,5 +39,9 @@
                 width: 100%;
             }
         }
+
+        > header, > p, > footer div {
+            @include container;
+        }
     }
 }

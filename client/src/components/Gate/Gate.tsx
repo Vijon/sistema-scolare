@@ -80,7 +80,7 @@ class Gate extends React.Component<Props, State> {
                     <p>
                         {txt}
                     </p>
-                    <footer>
+                    <footer><div>
                         {step !== "QUIZ" &&
                         // @ts-ignore
                         <button onClick={() => this.nextStep()}>{text[step === "SALUTE" ? "salute_btn" : "intro_btn"]}</button>
@@ -91,7 +91,7 @@ class Gate extends React.Component<Props, State> {
                             <button onClick={() => { this.submit(answer); } }>Ok</button>
                         </>
                         }
-                    </footer>
+                    </div></footer>
                 </div>
                 <div className="bg">
                     <Stage {...Size}>

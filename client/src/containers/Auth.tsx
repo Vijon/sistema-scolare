@@ -1,6 +1,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { setError, setAuthentication, forgetAuthentication } from "../store/actions/app";
+import { setAlert, setError, setAuthentication, forgetAuthentication } from "../store/actions/app";
 import { mergeProps /*, pushPath*/ } from "./helpers";
 import { State, User, Error } from "../types";
 import Api from "../services/Api";
@@ -26,6 +26,9 @@ const mapDispatchToProps = (dispatch: Function) => {
         },
         onError: (err: Error) => {
             dispatch(setError(err));
+        },
+        onAlert: (msg: any) => {
+            dispatch(setAlert(msg));
         }
     };
 };
@@ -33,9 +36,17 @@ const mapDispatchToProps = (dispatch: Function) => {
 interface Props {
     onLogin: Function;
     onError: Function;
+    onAlert: Function;
 }
 
-class Container extends React.Component<Props> {
+interface LocalState {
+    phase: "IDLE" | "EXEC",
+}
+
+class Container extends React.Component<Props, LocalState> {
+    state = {
+        phase: "IDLE"
+    } as LocalState;
 
     private afterJWT( $q: Promise<any> ) {
         const { onLogin, onError } = this.props;
@@ -47,6 +58,7 @@ class Container extends React.Component<Props> {
                 return Api.passport.verifyJWT(res.accessToken);
             })
             .then(payload => {
+                this.setState({phase: "IDLE"});
                 //console.log('JWT Payload', payload);
                 return Api.service('users').get(payload.userId);
             })
@@ -60,6 +72,9 @@ class Container extends React.Component<Props> {
                 });
             })
             .catch((e: any) => {
+                this.setState({phase: "IDLE"});
+                Api.logout();
+                reject(e);
                 onError(e);
             });
 
@@ -73,20 +88,27 @@ class Container extends React.Component<Props> {
     }
 
     exec( text: string ) {
+        const { onAlert } = this.props;
+        this.setState({phase: "EXEC"});
         const $q = Api.authenticate({
             "strategy": "local",
             "username": text,
             "password":  text
         });
         this.afterJWT($q).then( (user: any) => {
-            alert(`Ben arrivato ${user.name}`);
+            if (onAlert) onAlert({type: 'success', text: `Ben arrivato ${user.name}`})
+        }).catch( (e) => {
+            if (onAlert) onAlert({type: 'error', text: `La password non è giusta`})
         });
     }
 
     render() {
         const { onLogin } = this.props;
+        const { phase } = this.state;
 
         const authProps = {
+            phase,
+            alert,
             onAttempt: (text: string) => {
                 this.exec(text);
             }

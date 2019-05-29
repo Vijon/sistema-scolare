@@ -7,6 +7,7 @@ import Space, { Size } from '../Universe/Space'
 import "./Auth.scss";
  
 interface Props {
+    phase: string;
     onAttempt?: Function;
 }
 
@@ -34,6 +35,7 @@ class Auth extends React.Component<Props, State> {
   }
   
   render() {
+    const { phase } = this.props;
     const { password } = this.state;
     const s2tProps = {
         text: {
@@ -41,7 +43,10 @@ class Auth extends React.Component<Props, State> {
             stop: 'Ok, ho detto la password.'
         },
         onComplete: (text?: string) => {
-            this.submit(text);
+            if (text) {
+                this.setState({password: text});
+                this.submit(text);
+            }
         }
     }
     return (
@@ -49,8 +54,11 @@ class Auth extends React.Component<Props, State> {
             <header>Chi sei?</header>
             <SpeechToText {...s2tProps} />
             <nav>
-                <input type="text" placeholder="Oppure digita qui" onChange={(e) => { this.handleChange(e.target.value); } } />
-                <button onClick={() => this.submit(password)}>Ok</button>
+                <input type="text" placeholder="Oppure digita qui" value={password} onChange={(e) => { this.handleChange(e.target.value); } } />
+                <button onClick={() => this.submit(password)}>
+                    {phase === "IDLE" && <span>OK</span>}
+                    {phase === "EXEC" && <span>Cercando...</span>}
+                </button>
             </nav>
             <div className="bg">
                 <Stage {...get('full')}>

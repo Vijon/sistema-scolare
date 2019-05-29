@@ -52,7 +52,7 @@ class SpeechToTextCpt extends React.Component<Props, State> {
         const onFinalised = (text: string) => {
             const parts = [text, ...this.state.finalisedText || []];
             this.setState({
-                finalisedText: parts,
+                //finalisedText: parts,
                 interimText: '',
                 listening: false
             }, () => {

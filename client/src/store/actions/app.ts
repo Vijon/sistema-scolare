@@ -3,11 +3,19 @@ import { User, Error } from '../../types';
 export const Actions = {
     LOGGED_IN: "LOGGED_IN",
     LOGGED_OUT: "LOGGED_OUT",
+    SET_ALERT: "SET_ALERT",
     SET_ERROR: "SET_ERROR",
     SET_PLANETS: "SET_PLANETS",
     SET_CURRENT: "SET_CURRENT",
     SET_VISITING_PLANET: "SET_VISITING_PLANET"
 };
+
+export const setAlert = (alert: any) => {
+    return {
+        type: Actions.SET_ALERT,
+        alert
+    }
+}
 
 export const setError = (err: Error) => {
     return {

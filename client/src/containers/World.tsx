@@ -1,6 +1,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { setError, setCurrent } from "../store/actions/app";
+import { setAlert, setError, setCurrent } from "../store/actions/app";
 import Api from "../services/Api";
 import World from "../components/World/World";
 import Gate from "../components/Gate/Gate";
@@ -22,6 +22,9 @@ const mapDispatchToProps = (dispatch: Function) => {
         onUnlock: (item: any) => {
             //dispatch(setCurrent(item));
         },
+        onAlert: (msg: any) => {
+            dispatch(setAlert(msg));
+        }
     };
 };
 
@@ -32,6 +35,7 @@ interface Props {
     onInit: Function;
     onUnlock: Function;
     onAddMessage: Function;
+    onAlert: Function;
 }
 
 class Container extends React.Component<Props> {
@@ -60,7 +64,7 @@ class Container extends React.Component<Props> {
     }
     
     tryToUnlock( answer: string ) {
-        const { id, onUnlock } = this.props;
+        const { id, onUnlock, onAlert } = this.props;
         Api.service(`users/${id}/unlock`).find({
             query: {
                 name: answer
@@ -69,9 +73,10 @@ class Container extends React.Component<Props> {
         .then((res) => {
             this.loadTarget(id);
             onUnlock(res);
+            if (onAlert) onAlert({type: 'success', text: `Hai sbloccato il pianeta di ${answer}!`})
         })
         .catch((e: any) => {
-            alert(`Non è ${answer}`)
+            if (onAlert) onAlert({type: 'error', text: `Non è ${answer}`})
         });
     }
 

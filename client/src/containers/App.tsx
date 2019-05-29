@@ -2,12 +2,13 @@ import { connect } from "react-redux";
 import App from "../components/App";
 import Api from "../services/Api";
 import { route } from "../services/Router";
-import { forgetAuthentication } from "../store/actions/app";
+import { setAlert, forgetAuthentication } from "../store/actions/app";
 import { mergeProps } from "./helpers";
 
 const mapStateToProps = (state: any) => {
     return {
         user: state.user,
+        alert: state.alert
     };
 };
 
@@ -22,6 +23,9 @@ const mapDispatchToProps = (dispatch: Function) => {
                 console.log('error in logout')
             })
         },
+        onDismissAlert: () => {
+            dispatch(setAlert(null));
+        }
     };
 };
 

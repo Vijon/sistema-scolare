@@ -30,7 +30,7 @@ export default class Scrollable extends React.Component<Props, State> {
 
         const interactiveProps = {
           app,
-          onPress: ((e: any) => {
+          onDoubleTap: ((e: any) => {
             const current = { x: this.$container.x, y: this.$container.y };
             if (onClick) onClick({ x: e.x - current.x, y: e.y - current.y });
           }),

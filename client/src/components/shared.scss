@@ -21,6 +21,14 @@ body {
     transform: translate(-50%, -50%);
 }
 
+@mixin container() {
+    $point: 400px;
+    @media screen and (min-width: $point) {
+        max-width: $point;
+        margin: 0 auto;
+    }
+}
+
 @mixin input( ) {
     background: none;
     border: 2px solid #fff;

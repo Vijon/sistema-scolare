@@ -1,6 +1,7 @@
 import * as React from "react";
 import { route } from "../services/Router";
 import { get } from '../services/Config'
+import Alert from '../components/Fundamentals/Alert';
 import AddHome from '../components/AddHome/AddHome';
 import Nav from '../components/Nav/Nav';
 import Splash from '../components/Splash/Splash';
@@ -11,7 +12,9 @@ import MapEditor from '../containers/MapEditor';
 
 interface Props {
   user?: any;
+  alert?: any;
   onLogout?: Function;
+  onDismissAlert?: Function;
 }
 
 interface State {
@@ -25,8 +28,8 @@ interface State {
 
 class App extends React.Component<Props, State> {
     state = {
-        loading: true,
-        section: "SPLASH",
+      loading: true,
+      section: "SPLASH",
     } as State;
 
   componentWillReceiveProps( nextProps: Props ) {
@@ -86,7 +89,7 @@ class App extends React.Component<Props, State> {
   }
 
   render() {
-    const { user, onLogout} = this.props;
+    const { user, alert, onLogout, onDismissAlert } = this.props;
     const { loading, section, planet } = this.state;
     if (loading) {
       return null; //<Loading />;
@@ -101,6 +104,18 @@ class App extends React.Component<Props, State> {
         if (onLogout) onLogout();
       },
     }
+    const putAlert = () => {
+      if (alert) {
+        const alertProps = {
+          ...alert,
+          onDismiss: () => {
+            if (onDismissAlert) onDismissAlert();
+          }
+        }
+        return <Alert {...alertProps} />
+      }
+      return null;
+    }
     switch (section) {
         case 'SPLASH':
             props = { ...props, onDismiss: () => route.goto("universe") };
@@ -108,19 +123,19 @@ class App extends React.Component<Props, State> {
         break;
         case 'AUTH':
             props = { ...props };
-            return <Auth {...props} />
+            return <><Auth {...props} />{putAlert()}</>
         break;
         case 'UNIVERSE':
             props = { ...props };
-            return <><Nav {...navProps} /><Universe {...props} /></>
+            return <><Nav {...navProps} /><Universe {...props} />{putAlert()}</>
         break;
         case 'WORLD':
             props = { ...props };
-            return <><Nav {...navProps} /><World {...props} id={planet} /></>
+            return <><Nav {...navProps} /><World {...props} id={planet} />{putAlert()}</>
         break;
         case 'EDITOR':
             props = { ...props };
-            return <><Nav {...navProps} /><MapEditor {...props} id={planet} /></>
+            return <><Nav {...navProps} /><MapEditor {...props} id={planet} />{putAlert()}</>
         break;
     }
   }

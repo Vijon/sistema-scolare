@@ -11,6 +11,10 @@ $reduced: 50px;
     color: #000;
     text-shadow: 2px 2px 2px #fff;
 
+    > div {
+        @include container;
+    }
+
     button {
         @include btn;
         width: 100%;

@@ -59,10 +59,10 @@ class Toolbar extends React.Component<Props, State> {
     const scopes = Tileset.scopes();
 
     if (!open) {
-      return <div className={`ToolbarReduced ${mode}`}>
+      return <div className={`ToolbarReduced ${mode}`}><div>
         {mode === "MOVE" && <button onClick={() => { if (onOpen) onOpen() } }><span className="icon-build" /> Scegli blocco</button>}
         {mode === "DRAW" && <><button onClick={() => { if (onOpen) onOpen() } }><span className="icon-build" /> Altro blocco</button><button className="success" onClick={() => { if (onStop) onStop() } }><span className="icon-hand" /> Fatto?</button></>}
-      </div>
+      </div></div>
     }
 
     return (<div className="Toolbar">

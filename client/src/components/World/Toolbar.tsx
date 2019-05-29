@@ -36,9 +36,9 @@ class Toolbar extends React.Component<Props, State> {
     const { text } = this.state;
 
     if (!open) {
-      return <div className="ToolbarReduced">
+      return <div className="ToolbarReduced"><div>
         <button onClick={() => { if (onOpen) onOpen() } }><span className="icon-bubble" /> Lascia un messaggio a {name}</button>
-      </div>
+      </div></div>
     }
 
     const s2tProps = {

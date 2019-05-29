@@ -15,6 +15,10 @@ const reducer = (state: any = {}, action: any) => {
             return Object.assign({}, state, {
                 err: action.err
             });
+        case Actions.SET_ALERT:
+            return Object.assign({}, state, {
+                alert: action.alert
+            });
         case Actions.SET_PLANETS:
             return Object.assign({}, state, {
                 planets: action.planets
