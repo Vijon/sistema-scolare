@@ -33,26 +33,115 @@ export const intro_btn = () => pick([
 export const clues = (user: any, target: any) => {
     const data = target.gate.reduce( (acc, {key, value}) => { acc[key] = value; return acc; }, {} );
     
-    return [
-        `1 Ho i capelli ${data.capelli}`,
-        `2 I mie occhi sono ${data.occhi}`,
-        `3 ${data.occhiali ? `Ho gli occhiali` : `Non ho gli occhiali, ci vedo benissimo!`}`,
-        `4 Impazzisco per ${data.cibo}`,
-        `4 Mi piace da matti ${data.cibo}`,
-        `5 Anche a te piace ${data.cartone}`,
-        `6 Se hai coraggio, ti sfido a ${data.sport}`,
-        `7 Amo troppo ${data.squadra}`,
-        `7 Son contento solo se vedo vincere ${data.squadra}`,
-        `8 Sono terrorizzato da ${data.paura}`,
-        `8 Me la faccio sotto se ${data.paura}`,
-        `8 Non mi ${data.paura} altrimenti fuggo!`,
-        `9 Quando posso, ${data.tempo_libero}`,
-        `9 Appena ho un po' di tempo libero, mi scateno con ${data.tempo_libero}`,
-        `10 Sono un pro con ${data.videogame}`,
-        `10 Sfidami a ${data.videogame}, mettimi alla prova`,
-        `11 Mi piace studiare ${data.materia}`,
-        `12 Mi scateno appena parte ${data.musica}`,
-        `12 Appena sento ${data.musica} alzo a balla il volume`,
-        `13 Ueh zio, lo sai che ${data.cosa_bella}`,
-    ]
+    // group_id	username	password	name	Cognome	x	y	z	planet	
+    // sesso	capelli	
+    // occhi	occhiali	cibo	cartone	sport	squadra	paura	tempo_libero	videogioco	materia	
+    // musica	cosa_piu_bella	fratelli	cosa_felice	animale_pref	_animale	_altezza	
+    let clues = [] as string[];
+    if (data.sesso) {
+        clues = [...clues, 
+            data.sesso == "m" ? 'Sono un maschietto' : 'Sono una femminuccia',
+        ]
+    }
+    if (data.capelli) {
+        clues = [...clues, 
+            `Ho i capelli ${data.capelli}`,
+            `I miei capelli sono ${data.capelli}`,
+        ]
+    }
+    if (data.occhi) {
+        clues = [...clues, 
+            `I miei occhi sono ${data.occhi}`,
+        ]
+    }
+    if (data.occhiali) {
+        clues = [...clues, 
+            `${data.occhiali ? `Ho gli occhiali` : `Non ho gli occhiali, ci vedo benissimo!`}`,
+        ]
+    }
+    if (data.cibo) {
+        clues = [...clues, 
+            `Impazzisco quando mangio ${data.cibo}`,
+            `Mi piace da matti ${data.cibo}`,
+        ]
+    }
+    if (data.cartone) {
+        clues = [...clues, 
+            `Anche a te piace guardare ${data.cartone}?`,
+        ]
+    }
+    if (data.sport) {
+        clues = [...clues, 
+            `Se hai coraggio, ti sfido a ${data.sport}`,
+        ]
+    }
+    if (data.squadra) {
+        clues = [...clues, 
+            `Tifo per ${data.squadra}`,
+            `Son contento solo se vedo vincere ${data.squadra}`,
+        ]
+    }
+    if (data.paura) {
+        clues = [...clues, 
+            `La mia più grande paura ${data.paura}`,
+            //`8 Me la faccio sotto se ${data.paura}`,
+            //`8 Non mi ${data.paura} altrimenti fuggo!`,
+        ]
+    }
+    if (data.tempo_libero) {
+        clues = [...clues, 
+            `Quando posso, ${data.tempo_libero}`,
+            `Appena ho un po' di tempo libero, ${data.tempo_libero}`,
+        ]
+    }
+    if (data.videogioco) {
+        clues = [...clues, 
+            `Sono un pro a ${data.videogioco}`,
+            `Sfidami a ${data.videogioco}, mettimi alla prova`,
+        ]
+    }
+    if (data.materia) {
+        clues = [...clues, 
+            `Mi piace studiare ${data.materia}`,
+        ]
+    }
+    if (data.musica) {
+        clues = [...clues, 
+            `Mi scateno appena parte ${data.musica}`,
+            `Appena sento ${data.musica} alzo a balla il volume`,
+        ]
+    }
+    if (data.cosa_piu_bella) {
+        clues = [...clues, 
+            `La cosa più bella? ${data.cosa_piu_bella}`,
+        ]
+    }
+    if (data.fratelli) {
+        clues = [...clues, 
+            (data.fratelli == 0 ? `Non ho fratelli nè sorelle` : `Ho ${data.cosa_piu_bella}`),
+        ]
+    }
+    if (data.cosa_felice) {
+        clues = [...clues, 
+            `Mi rende felice ${data.cosa_felice}`,
+            `Cosa mi rende felice? ${data.cosa_felice}`,
+        ]
+    }
+    if (data.animale_pref) {
+        clues = [...clues, 
+            `Sai qual'è il mio animale preferito? ${data.animale_pref}`,
+        ]
+    }
+    if (data.animale) {
+        clues = [...clues, 
+            (data.animale == 0 ? `Non ho animali a casa` : `Ho ${data.animale}`),
+        ]
+    }
+    if (data.altezza) {
+        clues = [...clues, 
+            `Sono alt${data.sesso == "m" ? 'o' : 'a'} ${data.altezza}m`
+        ]
+    }
+    // Ueh zio, lo sai che 
+    return clues;
 };

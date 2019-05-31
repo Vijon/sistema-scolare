@@ -37,8 +37,10 @@ class Gate extends React.Component<Props, State> {
         this.setState({step: "QUIZ"})
 
         setInterval( () => {
-            this.setState({clueIndex: this.state.clueIndex+1})
-        }, 8000)
+            let newIndex = this.state.clueIndex+1;
+            if (newIndex === this.$clues.length) { newIndex = 0; }
+            this.setState({clueIndex: newIndex})
+        }, 4000)
     }
   }
 
@@ -69,7 +71,8 @@ class Gate extends React.Component<Props, State> {
             txt = text.intro;
         }
         if (step === "QUIZ") {
-            txt = this.$clues[clueIndex]
+            txt = this.$clues[clueIndex];
+            console.log(this.$clues);
         }
         return (
             <section className="Gate">

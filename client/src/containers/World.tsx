@@ -17,7 +17,6 @@ const mapDispatchToProps = (dispatch: Function) => {
     return {
         onInit: (item: any) => {
             dispatch(setCurrent(item));
-            console.log(item)
         },
         onUnlock: (item: any) => {
             //dispatch(setCurrent(item));

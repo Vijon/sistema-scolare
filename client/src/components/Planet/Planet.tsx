@@ -17,8 +17,8 @@ interface State {
 }
 
 export const Size = {
-  width: 180,
-  height: 180
+  width: 120,
+  height: 120
 }
 
 export const TYPES = [
@@ -37,6 +37,10 @@ export const TYPES = [
 ];
 
 class Planet extends React.Component<Props, State> {
+  // private
+  $sprite: any;
+  $rotation = 0;
+
   state = { rotation: 0 }
 
   async componentWillMount() {
@@ -52,9 +56,13 @@ class Planet extends React.Component<Props, State> {
   }
 
   tick = (delta: number) => {
+    this.$rotation = this.$rotation + 0.01 * delta;
+    this.$sprite.rotation = this.$rotation;
+    /*
     this.setState(({ rotation }) => ({
       rotation: rotation + 0.01 * delta,
     }))
+    */
   }
 
   render() {
@@ -66,8 +74,6 @@ class Planet extends React.Component<Props, State> {
       rotation: this.state.rotation,
       width: Size.width,
       height: Size.height,
-      /*x: Size.width / 2,
-      y: Size.height / 2,*/
       interactive: true,
       pointerdown: () => {
         if (onSelect) {
@@ -75,9 +81,10 @@ class Planet extends React.Component<Props, State> {
         }
       }
     }
+    
     return (
-      <Container x={x} y={y} scale={z}>
-        <Sprite {...sprite}  />
+      <Container x={x} y={y}>
+        <Sprite {...sprite} /*scale={z}*/ ref={s => this.$sprite = s} />
         {name &&
         <Text style={textStyle()} x={0} y={0} text={name} />
         }

@@ -27,7 +27,10 @@ export function classNames(...args: (string | null)[]) {
     return args.filter(a => a !== null).join(' ');
 };
 
-export function shuffleArray(o: any[]): any {
-    for(var j, x, i = o.length; i; j = parseInt(Math.random() * i + ''), x = o[--i], o[i] = o[j], o[j] = x);
-	return o;
+export function shuffleArray(a: any[]): any {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
 }

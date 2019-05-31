@@ -31,6 +31,38 @@ const boot = async () => {
 
 boot();
 
+const TYPES = [
+  { name: 'astrale' },
+  { name: 'fosforosh' },
+  { name: 'frogeye' },
+  { name: 'icecream' },
+  { name: 'marx' },
+  { name: 'megalocs' },
+  { name: 'moon' },
+  { name: 'potato' },
+  { name: 'inferno' },
+  { name: 'rotten' },
+  { name: 'slime' },
+  { name: 'vulcano' },
+];
+
+var usedX = [] as number[];
+var usedY = [] as number[];
+const randomPos = () => {
+    const Size = {
+        width: 6000,
+        height: 6000
+    }
+    var pos = {
+        x: Math.random() * Size.width,
+        y: Math.random() * Size.height,
+        z: Math.random() + .2
+    }
+    if (usedX.includes(pos.x) || usedY.includes(pos.y)) return randomPos();
+    usedX.push(pos.x); usedY.push(pos.y);
+    return pos;
+}
+
 const insert = {
     group: async (item) => {
         const $group = await app.service('groups').create({
@@ -38,23 +70,20 @@ const insert = {
         });
     },
     user: async (item) => {
+        const pos = randomPos();
         let user = {
             ...item,
             world: {
                 map: {},
-                pos: {
-                    x: item.x,
-                    y: item.y,
-                    z: item.z
-                },
-                planet: item.planet
+                pos,
+                planet: TYPES[Math.floor(Math.random()*TYPES.length)].name
             },
         };
         var $data = [] as any;
         Object.keys(item).forEach(k => {
             if (k.substr(0,1) === "_") {
                 $data.push({
-                    key: k.substring(-1),
+                    key: k.substr(1),
                     value: item[k]
                 });
             }

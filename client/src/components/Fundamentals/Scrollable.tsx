@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Container } from '@inlet/react-pixi'
 import Interactive from './Interactive';
+import { get } from '../../services/Config'
 
 interface Props {
     app: any;
@@ -20,6 +21,12 @@ var $dragger = {
     start: {},
     drag: 1
 } as any;
+
+
+const Size = {
+  width: get('width') as number,
+  height: get('height') as number
+}
 
 export default class Scrollable extends React.Component<Props, State> {
     // private
