@@ -2,6 +2,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { setAlert, setError, setCurrent } from "../store/actions/app";
 import Api from "../services/Api";
+import { route } from "../services/Router";
 import World from "../components/World/World";
 import Gate from "../components/Gate/Gate";
 import { mergeProps } from "./helpers";
@@ -118,7 +119,8 @@ class Container extends React.Component<Props> {
                 user,
                 target: target.gate,
                 text: target.text,
-                onAttempt: (answer: string) => this.tryToUnlock(answer)
+                onAttempt: (answer: string) => this.tryToUnlock(answer),
+                onDismiss: () => { route.goto(`universe`); }
             }
             return <Gate {...gateProps} />
         }

@@ -12,6 +12,7 @@ interface Props {
     target: any;
     text: any;
     onAttempt?: Function;
+    onDismiss?: Function;
 }
 
 interface State {
@@ -60,7 +61,7 @@ class Gate extends React.Component<Props, State> {
   }
   
   render() {
-        const { user, target, text } = this.props;
+        const { user, target, text, onDismiss } = this.props;
         const { step, answer, clueIndex } = this.state;
 
         var txt;
@@ -72,7 +73,6 @@ class Gate extends React.Component<Props, State> {
         }
         if (step === "QUIZ") {
             txt = this.$clues[clueIndex];
-            console.log(this.$clues);
         }
         return (
             <section className="Gate">
@@ -91,7 +91,10 @@ class Gate extends React.Component<Props, State> {
                         {step === "QUIZ" &&
                         <>
                             <input type="text" value={answer} placeholder="Come mi chiamo?" onChange={(e) => { this.handleChange(e.target.value); } } />
-                            <button onClick={() => { this.submit(answer); } }>Ok</button>
+                            <button disabled={answer.length === 0} onClick={() => { this.submit(answer); } }>Prova {answer}</button>
+                            <nav>
+                                <button onClick={() => { if (onDismiss) onDismiss(); } }>Abbandona il pianeta</button>
+                            </nav>
                         </>
                         }
                     </div></footer>
