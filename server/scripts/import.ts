@@ -11,6 +11,13 @@ const TABLES = [
     { sheet: 'giocatori', model: 'user' },
 ];
 
+// helper
+async function asyncForEach(array, callback) {
+    for (let index = 0; index < array.length; index++) {
+        await callback(array[index], index, array);
+    }
+}
+
 var sequelizeClient = app.get('sequelizeClient');
 const boot = async () => {
     await sequelizeClient.query('SET FOREIGN_KEY_CHECKS = 0');
@@ -21,10 +28,10 @@ const boot = async () => {
         file_id: process.env.GDRIVE_FILE_ID,
         sheets: TABLES.map( t => (t.sheet) )
     });
-    TABLES.map( async t => {
-        data[t.sheet].map( async item => {
+    await asyncForEach(TABLES, async t => {
+        await asyncForEach(data[t.sheet], async item => {
             await insert[t.model](item);
-        })
+        });
     });
     await sequelizeClient.query('SET FOREIGN_KEY_CHECKS = 1');
 };
@@ -54,8 +61,8 @@ const randomPos = () => {
         height: 6000
     }
     var pos = {
-        x: Math.random() * Size.width,
-        y: Math.random() * Size.height,
+        x: Math.round(Math.random() * Size.width),
+        y: Math.round(Math.random() * Size.height),
         z: Math.random() + .2
     }
     if (usedX.includes(pos.x) || usedY.includes(pos.y)) return randomPos();
@@ -89,8 +96,11 @@ const insert = {
             }
         })
         user.gate = $data;
-        const $user = await app.service('users').create({
-            ...user
-        });
+        user.password = user.username;
+        try {
+            const $user = await app.service('users').create({
+                ...user
+            });
+        } catch(e) {}
     }
 }

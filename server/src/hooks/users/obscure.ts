@@ -20,7 +20,9 @@ export default function() {
       if (!auth || !canAccess(auth, user)) {
         // remove name!
         user.name = null;
-        user.world.map = null;
+        if (user.world && user.world.map) {
+          user.world.map = null;
+        }
       } else {
         user.canView = true;
       }
