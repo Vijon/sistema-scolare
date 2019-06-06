@@ -1,6 +1,7 @@
 import authentication from '@feathersjs/authentication';
 import jwt from '@feathersjs/authentication-jwt';
 import local from '@feathersjs/authentication-local';
+import AppVerifier from './services/authentication/verifier';
 
 export default function (app) {
     const config = app.get('authentication');
@@ -8,7 +9,7 @@ export default function (app) {
     // Set up authentication with the secret
     app.configure(authentication(config));
     app.configure(jwt());
-    app.configure(local());
+    app.configure(local({ Verifier: AppVerifier }));
 
     // The `authentication` service is used to create a JWT.
     // The before `create` hook registers strategies that can be used
