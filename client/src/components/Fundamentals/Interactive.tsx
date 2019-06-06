@@ -9,6 +9,7 @@ interface Props {
     onMoveEnd?: (ev: any) => void
     onPress?: (ev: any) => void
     onPressEnd?: (ev: any) => void
+    onTap?: (ev: any) => void
     onDoubleTap?: (ev: any) => void
 }
 
@@ -20,14 +21,16 @@ export default class Interactive extends React.Component<Props, State> {
 
     componentWillMount() {
         const $el = this.props.app.view;
-        const { onMoveStart, onMove, onMoveEnd, onPress, onPressEnd, onDoubleTap } = this.props;
+        const { onMoveStart, onMove, onMoveEnd, onPress, onPressEnd, onTap, onDoubleTap } = this.props;
         $engine = new Hammer($el);
+        
         $engine.on('panstart', (ev) => onMoveStart ? onMoveStart(this.pos(ev)) : null );
         $engine.on('pan', (ev) => onMove ? onMove(this.pos(ev)) : null );
         $engine.on('panend', (ev) => onMoveEnd ? onMoveEnd(this.pos(ev)) : null );
         $engine.on('press', (ev) => onPress ? onPress(this.pos(ev)) : null );
         $engine.on('pressup', (ev) => onPressEnd ? onPressEnd(this.pos(ev)) : null );
         $engine.on('panend', (ev) => onPressEnd ? onPressEnd(this.pos(ev)) : null );
+        $engine.on('tap', (ev) => onTap ? onTap(this.pos(ev)) : null );
         $engine.on('doubletap', (ev) => onDoubleTap ? onDoubleTap(this.pos(ev)) : null );
 
         $engine.get('pan').set({ direction: Hammer.DIRECTION_ALL, threshold: 0 });

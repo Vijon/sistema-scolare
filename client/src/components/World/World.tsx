@@ -25,7 +25,6 @@ class World extends React.Component<Props, State> {
   state = {
     map: this.props.map,
     toolbarOpen: false,
-    pos: { x: 0, y: 0 }
   } as State;
 
   onInit(map: any) {
@@ -52,7 +51,7 @@ class World extends React.Component<Props, State> {
 
   render() {
     const { name, messages = [] } = this.props;
-    const { map, currentTile, currentMessage, toolbarOpen,  } = this.state;
+    const { map, currentTile, currentMessage, toolbarOpen, pos } = this.state;
 
     const toolbarProps = {
       name,
@@ -71,7 +70,9 @@ class World extends React.Component<Props, State> {
     }
     
     return <>
+      {pos &&
       <Toolbar {...toolbarProps} />
+      }
       <Stage {...Size}>
         <AppConsumer>{app => {
           const props = { app, ...areaProps };
