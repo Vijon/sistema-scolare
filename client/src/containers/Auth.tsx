@@ -90,6 +90,7 @@ class Container extends React.Component<Props, LocalState> {
     exec( text: string ) {
         const { onAlert } = this.props;
         this.setState({phase: "EXEC"});
+        text = text.toLowerCase();
         const $q = Api.authenticate({
             "strategy": "local",
             "username": text,
