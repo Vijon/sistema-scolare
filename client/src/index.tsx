@@ -10,8 +10,11 @@ import { route } from "./services/Router";
 import * as PWA from './services/PWA';
 
 route.init();
+/*
 PWA.init();
 PWA.initAddToHome();
+*/
+PWA.unregisterSW();
 
 const ga = Config.get('google_analytics');
 if (ga) {

@@ -156,6 +156,16 @@ function installSW(swUrl: string): Promise<string> {
     });
 }
 
+export function unregisterSW() {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then( (registrations) => {
+            for(let registration of registrations) {  
+                registration.unregister();
+            }
+        });
+    }
+}
+
 function publicApiUrl() {
     // tslint:disable-next-line:max-line-length
     return `${process.env.REACT_APP_SECURE ? 'https' : 'http'}://${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT_WEB}`;
