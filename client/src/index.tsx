@@ -16,6 +16,7 @@ PWA.initAddToHome();
 const ga = Config.get('google_analytics');
 if (ga) {
     ReactGA.initialize( ga );
+    ReactGA.pageview(window.location.pathname + window.location.search);
 }
 
 ReactDOM.render(<Root store={store} />, document.getElementById('root'));

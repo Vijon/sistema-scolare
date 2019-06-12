@@ -75,6 +75,10 @@ class Toolbar extends React.Component<Props, State> {
       {scopes.map( (s, i) => s.key === scope && (
       <section key={i}>
         <div>
+          <figure className={selected === "ERASER" ? "TileActive" : "" } onClick={() => { this.selectTile(s.key, "ERASER")  } }>
+            <div className={"ERASER"} />
+            <strong>{"GOMMA"}</strong>
+          </figure>
         {s.sheet.map( (tile: any, i: number) => (
           <figure key={i} className={selected === tile.path ? "TileActive" : "" } onClick={() => { this.selectTile(s.key, tile.key)  } }>
             <div className={tile.key} />

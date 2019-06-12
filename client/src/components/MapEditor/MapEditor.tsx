@@ -62,15 +62,19 @@ class MapEditor extends React.Component<Props, State> {
       const key = `${col}:${row}`;
       if (!map) map = {};
       if (!map[scope]) map[scope] = {};
-      map[scope][key] = currentTile;
-      this.setState({map});
+      var ct = currentTile as any;
+      if (currentTile === `${scope}.ERASER`) {
+        ct = null;
+      }
+      map[scope][key] = ct;
       if (onAddTile) {
         onAddTile({
           scope,
           key,
-          tile: currentTile
+          tile: ct
         } as NewTile)
       }
+      this.setState({map});
       if (onMapUpdate) {
         onMapUpdate(map);
       }

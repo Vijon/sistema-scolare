@@ -88,6 +88,13 @@ $offset2: 30px;
                 > strong {
                     font-weight: normal;
                 }
+
+                .ERASER {    
+                    width: 58px;
+                    height: 58px;
+                    background: url('./assets/eraser.png') no-repeat;
+                    background-size: contain;
+                }
     
                 &.TileActive {
                     //border-color: #fff;
