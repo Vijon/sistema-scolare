@@ -1,0 +1,9 @@
+{
+  "host": "domain",
+  "port": "3030",
+  "mysql": "mysql://username:password@host:3306/dbname",
+  "ssl": {
+    "key": "/etc/letsencrypt/.../privkey.pem",
+    "cert": "/etc/letsencrypt/.../cert.pem"
+  }
+}
