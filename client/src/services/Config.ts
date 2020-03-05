@@ -1,3 +1,8 @@
+import * as PIXI from 'pixi.js';
+import gsap from 'gsap';
+import PixiPlugin from 'gsap/PixiPlugin';
+PixiPlugin.registerPIXI(PIXI);
+gsap.registerPlugin(PixiPlugin);
 
 
 export const get = (key: string): any => {

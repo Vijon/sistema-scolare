@@ -1,9 +1,4 @@
 {
-  "host": "kids.vijon.it",
-  "port": "3030",
-  "mysql": "mysql://root:umbertoi@localhost:3306/vijon_kids",
-  "ssl": {
-    "key": "/etc/letsencrypt/archive/lab.castelli.vijon.it/privkey1.pem",
-    "cert": "/etc/letsencrypt/archive/lab.castelli.vijon.it/cert1.pem"
-  }
+  "host": "sistema-scolare-app.feathersjs.com",
+  "port": "PORT"
 }

@@ -1,6 +1,7 @@
 // See http://docs.sequelizejs.com/en/latest/docs/models-definition/
 // for more of what you can do here.
 import Sequelize, { NumberDataTypeOptions } from 'sequelize';
+import { Application } from '../declarations';
 const DataTypes = Sequelize.DataTypes;
 
 export const fields = {
@@ -43,7 +44,7 @@ export const fields = {
   },
 }
 
-export default function(app) {
+export default function(app: Application) {
   const sequelizeClient = app.get('sequelizeClient');
   const user = sequelizeClient.define('user', fields, {
     hooks: {

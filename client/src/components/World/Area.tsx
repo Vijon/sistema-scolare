@@ -1,4 +1,5 @@
 import React from 'react';
+import * as PIXI from 'pixi.js'
 import { Container, Sprite, Text } from '@inlet/react-pixi'
 import Scrollable from '../Fundamentals/Scrollable'
 import { get } from '../../services/Config'
@@ -54,7 +55,6 @@ class Area extends React.Component<Props, State> {
 
   build() {
     const { map, cols = COLS, rows = ROWS } = this.props;
-    const { } = this.state;
     if (!map) { return []; }
     let scopes = Object.keys(map);
     if (!scopes.length) scopes = ['ground'];
@@ -140,10 +140,13 @@ class Area extends React.Component<Props, State> {
               y: cell.row * Size.tile,
           }
           const debug = false;
-          /*return <Container {...containerProps}>
-            <Sprite {...spriteProps} />
-            {debug && <Text key={'t_' + i} style={TextStyle} x={spriteProps.x} y={spriteProps.y} text={`${cell.col} x ${cell.row}`} />}
-          </Container>*/
+          if (debug) {
+            return <Container {...containerProps}>
+              <Sprite {...spriteProps} />
+              {debug && <Text key={'t_' + i} style={TextStyle} x={spriteProps.x} y={spriteProps.y} text={`${cell.col} x ${cell.row}`} />}
+            </Container>
+          }
+          /**/
           return <Sprite key={i} {...spriteProps} />
         } catch(e) {
           console.error( `${cell.tile} not found` )

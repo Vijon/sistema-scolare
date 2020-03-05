@@ -1,5 +1,6 @@
 import { BadRequest } from "@feathersjs/errors";
 import { canEdit } from "../../models/user.model";
+import hooks from './editor.hooks';
 
 export default function(app) {
 
@@ -36,5 +37,5 @@ export default function(app) {
   // Get our initialized service so that we can register hooks
   const service = app.service('editor');
 
-  //service.hooks(hooks);
+  service.hooks(hooks);
 };

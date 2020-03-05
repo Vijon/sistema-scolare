@@ -1,3 +1,5 @@
+import * as PIXI from 'pixi.js';
+
 const SCOPES = [
     {"key": "ground", "label": "Blocchi"},
     {"key": "buildings", "label": "Paesaggio"},
@@ -15,7 +17,6 @@ export const BaseTile = "ground.erba";
 var $sheets = {} as any;
 var $loaded = false;
 var $promise: any;
-const root = `../../../public/`;
 export function load( scopes = null as any ) {
     if ($loaded) return Promise.resolve();
     if ($promise) return $promise;
@@ -37,11 +38,11 @@ export function get(key: string) {
     let css = require(`../../../public/spritesheet/${key}.css`);
     return new Promise( resolve => {
         const file = `/spritesheet/${key}.json`;
-        PIXI.loader
+        PIXI.Loader.shared
         .add(file)
         .load( () => {
             // get a reference to the sprite sheet we've just loaded:
-            const sheet = PIXI.loader.resources[file];
+            const sheet = PIXI.Loader.shared.resources[file];
             resolve(sheet);
             const t = sheet.textures as any;
             const tx = Object.keys(t).map( k => {

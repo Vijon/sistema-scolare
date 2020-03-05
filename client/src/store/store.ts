@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, compose } from "redux";
+import { createStore, applyMiddleware, compose, Middleware, StoreEnhancer } from "redux";
 // import thunk from "redux-thunk"
 import logger from "redux-logger";
 
@@ -8,9 +8,8 @@ import { RootReducer } from "./reducers/root";
  * Enhancer for storybook addon redux
  */
 // @ts-ignore
-import withReduxEnhancer from 'addon-redux/enhancer'
 const createMiddlewareEnhancer = () => {
-    const middleware = []
+    const middleware = [] as Middleware[];
     if (process.env.NODE_ENV !== 'production') {
         // include other middlewares as needed, like the invariant and logger middlewares
         middleware.push(logger);
@@ -19,11 +18,8 @@ const createMiddlewareEnhancer = () => {
 }
 
 const createEnhancer = () => {
-    const enhancers = []
+    const enhancers = [] as StoreEnhancer[];
     enhancers.push(createMiddlewareEnhancer())
-    if (process.env.NODE_ENV !== 'production') {
-        enhancers.push(withReduxEnhancer)
-    }
     return compose(...enhancers) as any;
 }
 

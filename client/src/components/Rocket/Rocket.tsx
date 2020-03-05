@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Sprite } from '@inlet/react-pixi'
-import { TweenMax, Circ } from "gsap";
-require('gsap/PixiPlugin');
+import gsap from "gsap";
 import { isEqual, angleBetweenPoints, distanceBetweenPoints } from '../utils';
  
 interface Props {
@@ -34,50 +33,53 @@ class Rocket extends React.Component<Props, State> {
 
   // private
   $sprite: any;
+  $timeline: any = {};
+  $init = false;
   
   componentDidMount() {
-    const { x, y } = this.props;
     if (!this.$sprite) return;
-    TweenMax.set(this.$sprite, {
+  }
+
+  init() {
+    if (this.$init) return;
+    const { x, y } = this.props;
+    gsap.set(this.$sprite, {
       pixi: { 
         x,
         y,
-        scale: .2
+        scale: .5
       }
     } );
+    this.$init = true;
   }
 
   componentWillReceiveProps( nextProps: Props ) {
     if (this.props.x === undefined) return;
     if (!isEqual(nextProps, this.props)) {
-      const { x, y, z = 1, onStop } = nextProps;
-      const rotation = angleBetweenPoints(this.props, nextProps);
-      const distance = distanceBetweenPoints(this.props, nextProps);
-      this.setState({ throttle: true })
-      if (nextProps.land) {
-        TweenMax.to(this.$sprite, distance * AnimationSpeed.fade, {
+      if ((nextProps.x !== this.props.x) || (nextProps.y !== this.props.y)) {
+        const { x, y, z = 1, onStop } = nextProps;
+        const rotation = angleBetweenPoints(this.props, nextProps);
+        const distance = distanceBetweenPoints(this.props, nextProps);
+        this.setState({ throttle: true })
+        console.log('launch ani', nextProps.land ? .2 : .5)
+        // prepare animations
+        gsap.to(this.$sprite, {
+          duration: distance * AnimationSpeed.total,
+          //delay: 0,
           pixi: {
-            scale: .5,
-          }
+            x, 
+            y,
+            rotation: 90 + rotation.degrees,
+            scale: nextProps.land ? .2 : .5,
+          },
+          ease: "circ",
+          onComplete: () => {
+            console.log('complete')
+            this.setState({ throttle: false });
+            if (onStop) onStop();
+          },
         });
-        TweenMax.to(this.$sprite, distance * AnimationSpeed.fade, {
-          pixi: {
-            scale: .2,
-          }
-        }).delay(distance * AnimationSpeed.total - distance * AnimationSpeed.fade);
       }
-      TweenMax.to(this.$sprite, distance * AnimationSpeed.total, {
-        pixi: { 
-          x, 
-          y,
-          rotation: 90 + rotation.degrees
-        },
-        ease: Circ.easeOut,
-        onComplete: () => {
-          this.setState({ throttle: false });
-          if (onStop) onStop();
-        }
-      } );
     }
   }
 
@@ -89,13 +91,13 @@ class Rocket extends React.Component<Props, State> {
       } as PIXI.Point
     }
     const spriteProps = {
-      ...Size,
+      //...Size,
       anchor: [.5, 0] as any,
       image: require(`./pixel_${this.state.throttle ? 'on' : 'off'}.png`),
     }
     return (
       <Container {...containerProps} >
-        <Sprite ref={s => { this.$sprite = s; }} {...spriteProps} />
+        <Sprite ref={s => { this.$sprite = s; this.init(); }} {...spriteProps} />
       </Container>
     );
   }

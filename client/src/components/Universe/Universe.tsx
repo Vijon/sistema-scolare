@@ -55,7 +55,7 @@ class Universe extends React.Component<Props, State> {
   planetSelect( planet: any ) {
     this.setState({
       id: planet.id,
-      pos: planet.pos
+      //pos: planet.pos
     });
   }
 

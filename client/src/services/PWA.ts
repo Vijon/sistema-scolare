@@ -174,8 +174,8 @@ function publicApiUrl() {
 function registerPushSubscription() {
     return new Promise( resolve => {
         // register push notification (https://thecodebarbarian.com/sending-web-push-notifications-from-node-js.html)
-        registration.pushManager.
-        subscribe({
+        registration.pushManager
+        .subscribe({
             userVisibleOnly: true,
             // The `urlBase64ToUint8Array()` function is the same as in
             // https://www.npmjs.com/package/web-push#using-vapid-key-for-applicationserverkey

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Hammer from 'hammerjs';
 
 interface Props {
@@ -33,7 +32,8 @@ export default class Interactive extends React.Component<Props, State> {
         $engine.on('tap', (ev) => onTap ? onTap(this.pos(ev)) : null );
         $engine.on('doubletap', (ev) => onDoubleTap ? onDoubleTap(this.pos(ev)) : null );
 
-        $engine.get('pan').set({ direction: Hammer.DIRECTION_ALL, threshold: 0 });
+        $engine.get('pan').set({ direction: Hammer.DIRECTION_ALL/*, threshold: 0*/ });
+        $engine.get('tap').set({ posThreshold: 100 });
     }
 
     componentWillUnmount() {

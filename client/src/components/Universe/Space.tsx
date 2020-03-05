@@ -19,7 +19,7 @@ export const Size = {
 class Space extends React.Component<Props, State> {
 
   render() {
-    const { app, size } = this.props;
+    const { size } = this.props;
     
     const tiles = {
       image: require("./assets/bg.png"),

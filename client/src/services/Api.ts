@@ -11,13 +11,13 @@ const app = feathers();
 // Set up Socket.io client with the socket
 // And a timeout of 2 seconds
 app.configure(socketio(socket, {
-  timeout: 2000
+  // timeout: 2000
 }));
 
 const options = {
   storageKey: 'universe-jwt', 
   storage: window.localStorage
-};
+} as any;
 app.configure(auth(options))
 
 export default app;

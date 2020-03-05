@@ -1,1 +1,28 @@
-{"ground":{"6:3":"ground.generic-rpg-tile08","6:4":"ground.generic-rpg-tile08","6:6":"ground.generic-rpg-tile08","6:8":"ground.generic-rpg-tile08","9:8":"ground.generic-rpg-tile08","12:8":"ground.generic-rpg-tile08","13:8":"ground.generic-rpg-tile08","13:7":"ground.generic-rpg-tile08","13:6":"ground.generic-rpg-tile08","12:4":"ground.generic-rpg-tile08","3:5":"ground.generic-rpg-tile-waterfall01","3:3":"ground.generic-rpg-tile-waterfall01","3:2":"ground.generic-rpg-tile-waterfall01","3:1":"ground.generic-rpg-tile-waterfall01","4:1":"ground.generic-rpg-tile-waterfall01","5:1":"ground.generic-rpg-tile-waterfall01","7:1":"ground.generic-rpg-tile-waterfall01","9:2":"ground.generic-rpg-tile-waterfall01","10:2":"ground.generic-rpg-tile-waterfall01","10:3":"ground.generic-rpg-tile-waterfall01","9:5":"ground.generic-rpg-tile-waterfall01","9:6":"ground.generic-rpg-tile-waterfall01","10:6":"ground.generic-rpg-tile-waterfall01","11:6":"ground.generic-rpg-tile-waterfall01"}}
+{
+    "ground": {
+        "6:3": "ground.roccia.png",
+        "6:4": "ground.roccia.png",
+        "6:6": "ground.roccia.png",
+        "6:8": "ground.roccia.png",
+        "9:8": "ground.roccia.png",
+        "12:8": "ground.roccia.png",
+        "13:8": "ground.roccia.png",
+        "13:7": "ground.roccia.png",
+        "13:6": "ground.roccia.png",
+        "12:4": "ground.roccia.png",
+        "3:5": "ground.acqua.png",
+        "3:3": "ground.acqua.png",
+        "3:2": "ground.acqua.png",
+        "3:1": "ground.acqua.png",
+        "4:1": "ground.acqua.png",
+        "5:1": "ground.acqua.png",
+        "7:1": "ground.acqua.png",
+        "9:2": "ground.acqua.png",
+        "10:2": "ground.acqua.png",
+        "10:3": "ground.acqua.png",
+        "9:5": "ground.acqua.png",
+        "9:6": "ground.acqua.png",
+        "10:6": "ground.acqua.png",
+        "11:6": "ground.acqua.png"
+    }
+}

@@ -1,27 +1,22 @@
-import authentication from '@feathersjs/authentication';
-import jwt from '@feathersjs/authentication-jwt';
-import local from '@feathersjs/authentication-local';
-import AppVerifier from './services/authentication/verifier';
+import { ServiceAddons } from '@feathersjs/feathers';
+import { AuthenticationService, JWTStrategy } from '@feathersjs/authentication';
+import { LocalStrategy } from '@feathersjs/authentication-local';
+import { expressOauth } from '@feathersjs/authentication-oauth';
 
-export default function (app) {
-    const config = app.get('authentication');
+import { Application } from './declarations';
 
-    // Set up authentication with the secret
-    app.configure(authentication(config));
-    app.configure(jwt());
-    app.configure(local({ Verifier: AppVerifier }));
+declare module './declarations' {
+  interface ServiceTypes {
+    'authentication': AuthenticationService & ServiceAddons<any>;
+  }
+}
 
-    // The `authentication` service is used to create a JWT.
-    // The before `create` hook registers strategies that can be used
-    // to create a new valid JWT (e.g. local or oauth2)
-    app.service('authentication').hooks({
-        before: {
-            create: [
-                authentication.hooks.authenticate(config.strategies)
-            ],
-            remove: [
-                authentication.hooks.authenticate('jwt')
-            ]
-        }
-    });
+export default function(app: Application) {
+  const authentication = new AuthenticationService(app);
+
+  authentication.register('jwt', new JWTStrategy());
+  authentication.register('local', new LocalStrategy());
+
+  app.use('/authentication', authentication);
+  app.configure(expressOauth());
 }

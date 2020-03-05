@@ -1,25 +1,25 @@
-.banquet {
-    width: 80px;
-    height: 80px;
-    background: url("buildings.png") -0px -0px;
-	background-size: 260px 260px;
-}
-
-.house {
+.house2 {
     width: 80px;
     height: 80px;
     background: url("buildings.png") -80px -0px;
 	background-size: 260px 260px;
 }
 
-.house2 {
+.house {
+    width: 80px;
+    height: 80px;
+    background: url("buildings.png") -0px -0px;
+	background-size: 260px 260px;
+}
+
+.banquet {
     width: 80px;
     height: 80px;
     background: url("buildings.png") -0px -80px;
 	background-size: 260px 260px;
 }
 
-.albero3 {
+.ship {
     width: 50px;
     height: 50px;
     background: url("buildings.png") -80px -80px;
@@ -47,10 +47,10 @@
 	background-size: 260px 260px;
 }
 
-.ship {
+.tree6 {
     width: 50px;
     height: 50px;
-    background: url("buildings.png") -0px -160px;
+    background: url("buildings.png") -210px -150px;
 	background-size: 260px 260px;
 }
 
@@ -96,10 +96,10 @@
 	background-size: 260px 260px;
 }
 
-.tree6 {
+.albero3 {
     width: 50px;
     height: 50px;
-    background: url("buildings.png") -210px -150px;
+    background: url("buildings.png") -0px -160px;
 	background-size: 260px 260px;
 }
 

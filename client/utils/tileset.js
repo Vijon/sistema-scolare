@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const spritesheet = require('spritesheet-js');
 
-const target = __dirname + '/../public/';
+const target = path.resolve(__dirname, '..', 'public');
 const options = {
     square: true
 }

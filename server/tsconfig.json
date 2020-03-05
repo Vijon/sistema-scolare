@@ -1,21 +1,20 @@
 {
-    "compilerOptions": {
-        "target": "es6",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "allowSyntheticDefaultImports": true,
-        "sourceMap": true,
-        "noEmitHelpers": false,
-        "strictNullChecks": true
-    },
-    "include": [
-        "src/*",
-        "src/**/*",
-        "test/"
-    ],
-    "exclude": [
-        "node_modules/**"
-    ]
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "commonjs",
+    "outDir": "./lib",
+    "strict": true,
+    "esModuleInterop": true,
+    "noImplicitAny": false
+  },
+  "include": [
+      "src/*",
+      "src/**/*",
+      "scripts/**/*",
+      "test/"
+  ],
+  "exclude": [
+    "test",
+    "node_modules/**"
+  ]
 }

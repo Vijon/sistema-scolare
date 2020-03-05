@@ -1,26 +1,26 @@
-import * as path from 'path'; 
+import path from 'path';
+import favicon from 'serve-favicon';
+import compress from 'compression';
+import helmet from 'helmet';
+import cors from 'cors';
 
-const favicon = require('serve-favicon');
-import * as compress from 'compression';
-import * as helmet from 'helmet';  
-import * as cors from 'cors';   
+import feathers from '@feathersjs/feathers';
+import configuration from '@feathersjs/configuration';
+import express from '@feathersjs/express';
+import socketio from '@feathersjs/socketio';
 
-import * as feathers from '@feathersjs/feathers';  
-import * as configuration from '@feathersjs/configuration';  
-import * as express from '@feathersjs/express';  
-import * as socketio from '@feathersjs/socketio';  
 
+import { Application } from './declarations';
 import logger from './logger';
 import middleware from './middleware';
-import services from './services'; 
-import hooks from './app.hooks';
+import services from './services';
+import appHooks from './app.hooks';
 import channels from './channels';
-
-import sequelize from './sequelize';
 import authentication from './authentication';
+import sequelize from './sequelize';
+// Don't remove this comment. It's needed to format import lines nicely.
 
-
-const app = express(feathers());
+const app: Application = express(feathers());
 
 // Load app configuration
 app.configure(configuration());
@@ -50,8 +50,8 @@ app.configure(channels);
 
 // Configure a middleware for 404s and the error handler
 app.use(express.notFound());
-app.use(express.errorHandler({ logger }));
+app.use(express.errorHandler({ logger } as any));
 
-app.hooks(hooks);
+app.hooks(appHooks);
 
 export default app;

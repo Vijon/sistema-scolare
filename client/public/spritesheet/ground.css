@@ -1,14 +1,14 @@
-.lastre {
-    width: 58px;
-    height: 58px;
-    background: url("ground.png") -0px -0px;
-	background-size: 285px 285px;
-}
-
 .mattone {
     width: 57px;
     height: 58px;
     background: url("ground.png") -58px -0px;
+	background-size: 285px 285px;
+}
+
+.lastre {
+    width: 58px;
+    height: 58px;
+    background: url("ground.png") -0px -0px;
 	background-size: 285px 285px;
 }
 
@@ -19,21 +19,21 @@
 	background-size: 285px 285px;
 }
 
-.pietra2 {
+.terra {
     width: 58px;
     height: 57px;
     background: url("ground.png") -0px -58px;
 	background-size: 285px 285px;
 }
 
-.sassi {
+.pietra2 {
     width: 58px;
     height: 57px;
     background: url("ground.png") -58px -58px;
 	background-size: 285px 285px;
 }
 
-.terra {
+.sassi {
     width: 58px;
     height: 57px;
     background: url("ground.png") -0px -115px;
@@ -54,42 +54,42 @@
 	background-size: 285px 285px;
 }
 
-.boh {
+.roccia {
     width: 57px;
     height: 57px;
     background: url("ground.png") -115px -115px;
 	background-size: 285px 285px;
 }
 
-.erba {
+.lava2 {
     width: 57px;
     height: 57px;
     background: url("ground.png") -228px -0px;
 	background-size: 285px 285px;
 }
 
-.erba2 {
-    width: 57px;
+.ghiaccio {
+    width: 56px;
     height: 57px;
-    background: url("ground.png") -228px -57px;
+    background: url("ground.png") -228px -172px;
 	background-size: 285px 285px;
 }
 
-.lastre2 {
+.muro1 {
     width: 57px;
     height: 57px;
     background: url("ground.png") -228px -114px;
 	background-size: 285px 285px;
 }
 
-.lava2 {
+.erba {
     width: 57px;
     height: 57px;
     background: url("ground.png") -0px -172px;
 	background-size: 285px 285px;
 }
 
-.muro1 {
+.lastre2 {
     width: 57px;
     height: 57px;
     background: url("ground.png") -57px -172px;
@@ -103,38 +103,38 @@
 	background-size: 285px 285px;
 }
 
-.roccia {
+.erba2 {
     width: 57px;
     height: 57px;
     background: url("ground.png") -171px -172px;
 	background-size: 285px 285px;
 }
 
-.calanco {
+.muro2 {
     width: 56px;
     height: 57px;
     background: url("ground.png") -172px -58px;
 	background-size: 285px 285px;
 }
 
-.ghiaccio {
+.lava {
     width: 56px;
     height: 57px;
     background: url("ground.png") -172px -115px;
 	background-size: 285px 285px;
 }
 
-.lava {
+.calanco {
     width: 56px;
     height: 57px;
     background: url("ground.png") -116px -58px;
 	background-size: 285px 285px;
 }
 
-.muro2 {
-    width: 56px;
+.boh {
+    width: 57px;
     height: 57px;
-    background: url("ground.png") -228px -172px;
+    background: url("ground.png") -228px -57px;
 	background-size: 285px 285px;
 }
 

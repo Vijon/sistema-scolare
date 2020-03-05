@@ -1,5 +1,5 @@
-export default function () {
-  const app = this; // eslint-disable-line no-unused-vars
-  // Add your custom middleware here. Remember that
-  // in Express, the order matters.
-};
+import { Application } from '../declarations';
+// Don't remove this comment. It's needed to format import lines nicely.
+
+export default function (app: Application) {
+}

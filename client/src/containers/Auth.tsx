@@ -54,13 +54,8 @@ class Container extends React.Component<Props, LocalState> {
         return new Promise( (resolve, reject) => {
 
             $q.then((res) => {
-                //console.log('Authenticated!', res);
-                return Api.passport.verifyJWT(res.accessToken);
-            })
-            .then(payload => {
-                this.setState({phase: "IDLE"});
-                //console.log('JWT Payload', payload);
-                return Api.service('users').get(payload.userId);
+                const { accessToken, user } = res;
+                return Promise.resolve(user);
             })
             .then(user => {
                 Api.set('user', user);
@@ -72,6 +67,7 @@ class Container extends React.Component<Props, LocalState> {
                 });
             })
             .catch((e: any) => {
+                console.log(e)
                 this.setState({phase: "IDLE"});
                 Api.logout();
                 reject(e);
@@ -82,9 +78,11 @@ class Container extends React.Component<Props, LocalState> {
     }
     
     componentDidMount( ) {
-        const $q = Api.authenticate()
+        const $q = Api.reAuthenticate();
         
-        this.afterJWT($q);
+        this.afterJWT($q).then( (user: any) => {
+        }).catch( (e) => {
+        });
     }
 
     exec( text: string ) {
@@ -104,7 +102,6 @@ class Container extends React.Component<Props, LocalState> {
     }
 
     render() {
-        const { onLogin } = this.props;
         const { phase } = this.state;
 
         const authProps = {

@@ -6,29 +6,27 @@
     "default": 10,
     "max": 50
   },
-  "mysql": "mysql://username:password@host:3306/dbname",
   "authentication": {
-    "secret": "random_secret_seed",
-    "strategies": [
+    "entity": "user",
+    "service": "users",
+    "secret": "ooEJbLEDBz7j5qRAEZ/j6X7HqZA=",
+    "authStrategies": [
       "jwt",
       "local"
     ],
-    "path": "/authentication",
-    "service": "users",
-    "jwt": {
+    "jwtOptions": {
       "header": {
         "typ": "access"
       },
       "audience": "https://yourdomain.com",
-      "subject": "anonymous",
       "issuer": "feathers",
       "algorithm": "HS256",
       "expiresIn": "1d"
     },
     "local": {
-      "entity": "user",
       "usernameField": "username",
       "passwordField": "password"
     }
-  }
+  },
+  "mysql": "mysql://user:pwd@localhost:3306/dbname"
 }

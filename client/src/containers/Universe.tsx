@@ -19,7 +19,6 @@ const mapDispatchToProps = (dispatch: Function) => {
         onInit: (text: string) => {
             dispatch(resetCurrent());
             Api.service('users').find({
-
             })
             .then((res) => {
                 // transform in planet ;)
