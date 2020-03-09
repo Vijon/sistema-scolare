@@ -1,6 +1,9 @@
 # Base on offical Node.js Alpine image
 FROM node:alpine
 
+# Must install GIT (for spritesheet dependency)
+RUN apk add --no-cache git
+
 # Set working directory
 WORKDIR /usr/app
 
@@ -20,5 +23,9 @@ COPY ./ ./
 # Build app
 RUN npm run build
 
+# Run container as non-root (unprivileged) user
+# The node user is provided in the Node.js Alpine base image
+#USER node
+
 # Run npm start script with PM2 when container starts
-CMD [ "npx", "serve", "build", "--listen", "80" ]
+CMD [ "npx", "serve", "build", "-s", "--listen", "80" ]

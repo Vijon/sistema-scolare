@@ -3,24 +3,36 @@ services:
   app:
     build: ./client/
     restart: always
-    image: hell-display_app
+    image: sistema-scolare_app
     expose:
       - 80
     environment:
       VIRTUAL_HOST: ${NGINX_DOMAIN}
       LETSENCRYPT_HOST: ${NGINX_DOMAIN}
       LETSENCRYPT_EMAIL: ${NGINX_EMAIL}
-    
+  
+  mysql-development:
+    image: mysql:5.7
+    restart: always
+    volumes:
+      - ./import.sql:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: app
+    ports:
+      - "3308:3306"
+  
   server:
     build: ./server/
     restart: always
-    image: hell-display_server
+    image: sistema-scolare_server
+    depends_on:
+      - mysql-development
     expose:
-      - 4001
-      - 5001
+      - 3001
     environment:
       API_HOST: ${NGINX_DOMAIN}
-      API_PORTS: 3001,3002
+      API_PORTS: 3001
 
 networks:
     default:

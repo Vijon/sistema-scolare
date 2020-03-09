@@ -10,11 +10,11 @@
   "include": [
       "src/*",
       "src/**/*",
-      "scripts/**/*",
       "test/"
   ],
   "exclude": [
     "test",
+    "scripts/**/*",
     "node_modules/**"
   ]
 }

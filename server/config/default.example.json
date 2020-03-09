@@ -1,6 +1,6 @@
 {
   "host": "localhost",
-  "port": 3030,
+  "port": 3001,
   "public": "../public/",
   "paginate": {
     "default": 10,
@@ -28,5 +28,5 @@
       "passwordField": "password"
     }
   },
-  "mysql": "mysql://user:pwd@localhost:3306/dbname"
+  "mysql": "mysql://root:secret@mysql-development:3306/app"
 }
