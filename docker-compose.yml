@@ -15,7 +15,7 @@ services:
     image: mysql:5.7
     restart: always
     volumes:
-      - ./import.sql:/docker-entrypoint-initdb.d
+      - ./server/scripts/import:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: app
