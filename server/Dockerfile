@@ -21,4 +21,5 @@ EXPOSE 3001
 # The node user is provided in the Node.js Alpine base image
 #USER node
 
+ENV NODE_ENV=production
 CMD ["npm", "run", "start"]
