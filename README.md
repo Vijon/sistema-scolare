@@ -1,15 +1,15 @@
 # Sistema Scolare (School System) #
 
-- [Try demo](https://kids.vijon.it/)
+- [Try demo](https://sistema-scolare.vijon.it/)
 
 ## Overview ##
-This game has been created during the last months of elementary school of my sons, which have helped me to plan, draw, invent everything. An infinite brainstorming, let's say.
+This game has been created during the last months of primary school of my sons, which have helped me to plan, draw, invent everything. An infinite brainstorming, let's say.
 We wanted to create a tool that could keep children (now boys) in contact even after the end of primary school since almost everyone would no longer be in the same class the following year.
 
 We set out to:
 - don't create a chat
 - do not use in any way personal or sensitive data
-- do something that amused and  even a little creative
+- do something that amused and even a little creative
 
 From these few guidelines the "Sistema Scolare" (School System) was born.
 
@@ -24,7 +24,7 @@ Here the visitor can also "plant" around messages that all planet's explorers wi
 ***
 # Sistema Scolare #
 
-- [Prova la demo](https://kids.vijon.it/)
+- [Prova la demo](https://sistema-scolare.vijon.it/)
 
 ## Panoramica ##
 Questo "giochino" ha preso forma negli ultimi mesi di elementari dei miei figli, i quali mi hanno aiutato a progettare, disegnare, inventare il tutto. Un brainstorming costante, diciamo.
