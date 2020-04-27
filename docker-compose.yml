@@ -15,7 +15,7 @@ services:
     image: mysql:5.7
     restart: always
     volumes:
-      - ./import.sql:/docker-entrypoint-initdb.d
+      - ./server/scripts/import:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: app
@@ -30,6 +30,8 @@ services:
       - mysql-development
     expose:
       - 3001
+    volumes:
+      - certs:/etc/nginx/certs:ro
     environment:
       API_HOST: ${NGINX_DOMAIN}
       API_PORTS: 3001
@@ -38,3 +40,9 @@ networks:
     default:
         external:
             name: nginx-proxy
+
+volumes:
+  certs:
+    external:
+      name:  nginx-proxy_certs
+            

@@ -24,16 +24,20 @@ const boot = async () => {
     for (let i=0; i<TABLES.length; i++) {
         await sequelizeClient.models[TABLES[i].model].truncate({ cascade: false });
     }
-    const data = await readSheet( {
-        file_id: process.env.GDRIVE_FILE_ID,
-        sheets: TABLES.map( t => (t.sheet) )
-    });
-    await asyncForEach(TABLES, async t => {
-        await asyncForEach(data[t.sheet], async item => {
-            await insert[t.model](item);
+    try {
+        const data = await readSheet( {
+            file_id: process.env.GDRIVE_FILE_ID,
+            sheets: TABLES.map( t => (t.sheet) )
         });
-    });
-    await sequelizeClient.query('SET FOREIGN_KEY_CHECKS = 1');
+        await asyncForEach(TABLES, async t => {
+            await asyncForEach(data[t.sheet], async item => {
+                await insert[t.model](item);
+            });
+        });
+        await sequelizeClient.query('SET FOREIGN_KEY_CHECKS = 1');
+    } catch(e) {
+        console.log('ERROR', e)
+    }
 };
 
 boot();
