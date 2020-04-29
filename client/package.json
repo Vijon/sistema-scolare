@@ -36,7 +36,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9009 -s public",
+    "storybook": "start-storybook -p 2001 -h 0.0.0.0 -s public",
     "build-storybook": "build-storybook -s public",
     "build-tileset": "node utils/tileset.js"
   },

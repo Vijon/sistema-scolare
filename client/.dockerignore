@@ -1,0 +1,8 @@
+.gitignore
+.dockerignore
+Dockerfile
+Dockerfile-storybook
+./build
+./node_modules
+./coverage
+./storybook-static
