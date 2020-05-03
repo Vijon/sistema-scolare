@@ -1,6 +1,7 @@
 # Sistema Scolare (School System) #
 
 - [Try demo](https://sistema-scolare.vijon.it/)
+- [Storybook](http://sistema-scolare.vijon.it:2001)
 
 ## Overview ##
 This game has been created during the last months of primary school of my sons, which have helped me to plan, draw, invent everything. An infinite brainstorming, let's say.
@@ -25,6 +26,7 @@ Here the visitor can also "plant" around messages that all planet's explorers wi
 # Sistema Scolare #
 
 - [Prova la demo](https://sistema-scolare.vijon.it/)
+- [Storybook](http://sistema-scolare.vijon.it:2001)
 
 ## Panoramica ##
 Questo "giochino" ha preso forma negli ultimi mesi di elementari dei miei figli, i quali mi hanno aiutato a progettare, disegnare, inventare il tutto. Un brainstorming costante, diciamo.
