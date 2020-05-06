@@ -95,7 +95,7 @@ class Container extends React.Component<Props, LocalState> {
             "password":  text
         });
         this.afterJWT($q).then( (user: any) => {
-            if (onAlert) onAlert({type: 'success', text: `Ben arrivato ${user.name}`})
+            if (onAlert) onAlert({type: 'success', text: `Ciao ${user.name}`})
         }).catch( (e) => {
             if (onAlert) onAlert({type: 'error', text: `La password non è giusta`})
         });

@@ -5,6 +5,7 @@ import { State, User, Error } from "../types";
 import Api from "../services/Api";
 import { route } from "../services/Router";
 import Universe from "../components/Universe/Universe";
+import { get } from "../services/Config";
 
 const mapStateToProps = (state: State) => {
     return {
@@ -14,6 +15,12 @@ const mapStateToProps = (state: State) => {
     };
 };
 
+
+export const Size = {
+    width: get('universe_width'),
+    height: get('universe_height')
+}
+
 const mapDispatchToProps = (dispatch: Function) => {
     return {
         onInit: (text: string) => {
@@ -22,12 +29,15 @@ const mapDispatchToProps = (dispatch: Function) => {
             })
             .then((res) => {
                 // transform in planet ;)
-                const planets = res.map( (r: any) => ({
-                    id: r.id,
-                    name: r.name,
-                    pos: r.world.pos,
-                    type: r.world.planet
-                }) )
+                const planets = res.map( (r: any) => {
+                    const { x, y, z } = r.world.pos;
+                    return {
+                        id: r.id,
+                        name: r.name,
+                        pos: { x: x*Size.width/100, y: y*Size.height/100, z },
+                        type: r.world.planet
+                    }
+                })
                 dispatch(setPlanets(planets));
             })
             .catch((e: any) => {

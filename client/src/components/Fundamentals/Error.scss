@@ -1,0 +1,11 @@
+@import "../shared";
+
+.Error {
+    @include popup;
+    @include bigText;
+
+    > .content {
+        @include center;
+        text-align: center;
+    }
+}

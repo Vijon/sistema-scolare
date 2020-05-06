@@ -7,6 +7,8 @@ gsap.registerPlugin(PixiPlugin);
 
 export const get = (key: string): any => {
     switch (key) {
+        case 'universe_width': return 2000;
+        case 'universe_height': return 2000;
         case 'width': return document.documentElement.clientWidth;
         case 'height': return document.documentElement.clientHeight;
         case 'full': return { width: get('width'), height: get('height') };

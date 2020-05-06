@@ -21,8 +21,8 @@ interface State {
 }
 
 export const Size = {
-  width: 6000,
-  height: 6000
+  width: get('universe_width'),
+  height: get('universe_height')
 }
 
 class Universe extends React.Component<Props, State> {
