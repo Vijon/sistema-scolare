@@ -1,9 +1,12 @@
 # Sistema Scolare (School System) #
 
 - [Try demo](https://sistema-scolare.vijon.it/)
+- [Demo data](https://docs.google.com/spreadsheets/d/1cWKSL-yZmuBnYQ5E_ksMFQnhP51OIqgydxHq24tRdw8/edit?usp=sharing)
 - [Storybook](http://sistema-scolare.vijon.it:2001)
 
 ## Overview ##
+**This app is in Italian and should be used preferably on mobile**
+
 This game has been created during the last months of primary school of my sons, which have helped me to plan, draw, invent everything. An infinite brainstorming, let's say.
 We wanted to create a tool that could keep children (now boys) in contact even after the end of primary school since almost everyone would no longer be in the same class the following year.
 
@@ -22,10 +25,15 @@ Each planet is owned by a classmate but is locked, to unlock it the player must 
 Once the planet is unlocked, he can explore its surface in full "Zelda" style. This map is completely managed and customized by the owner himself.
 Here the visitor can also "plant" around messages that all planet's explorers will be able to read.
 
+## Demo ##
+You can [try demo](https://sistema-scolare.vijon.it/) using one of the players contained in [this document](https://docs.google.com/spreadsheets/d/1cWKSL-yZmuBnYQ5E_ksMFQnhP51OIqgydxHq24tRdw8/edit?usp=sharing). To simplify *password* is same as *username*.
+Once logged in you can build your own planet clicking on "Casa mia" or you can explore universe searching for planers to unlock. To unlock a planet you have to guess the owner's name with the help of the clues (you'll find in the usual document).
+
 ***
 # Sistema Scolare #
 
 - [Prova la demo](https://sistema-scolare.vijon.it/)
+- [Dati della demo](https://docs.google.com/spreadsheets/d/1cWKSL-yZmuBnYQ5E_ksMFQnhP51OIqgydxHq24tRdw8/edit?usp=sharing)
 - [Storybook](http://sistema-scolare.vijon.it:2001)
 
 ## Panoramica ##
@@ -46,6 +54,10 @@ Il giocatore, autenticatosi con la sua password, si troverà nello spazio con un
 Ogni pianeta è proprietà di un compagno di classe ma è bloccato, per sbloccarlo il giocatore deve indovinare il nome del proprietario grazie a degli indizi (ricavati dal questionario di prima).
 Una volta sbloccato il pianeta esso potrà esplorarne la superficie in pieno stile "Zelda". Questa mappa è completamente gestita e personalizzata dal proprietario stesso.
 E qui sarà anche possibile "piantare" in giro dei messaggi che tutti gli esploratori di quel pianeta potranno leggere.
+
+## Demo ##
+Puoi [fare un giro sulla demo](https://sistema-scolare.vijon.it/) usando uno dei giocatori contenuti in [questo documento](https://docs.google.com/spreadsheets/d/1cWKSL-yZmuBnYQ5E_ksMFQnhP51OIqgydxHq24tRdw8/edit?usp=sharing). Per semplicità, la *password* da inserire è identica all'*username*.
+Una volta autenticato, costruisci il tuo pianeta toccando "Casa mia" o esplora l'universo alla ricerca di pianeti da sbloccare. Per sbloccare un pianeta devi indovinare il nome del proprietario con l'aiuto degli indizi (li troverai sempre nel documento).
 
 ***
 ## Tech ##
