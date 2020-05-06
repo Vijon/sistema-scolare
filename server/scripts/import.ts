@@ -60,13 +60,9 @@ const TYPES = [
 var usedX = [] as number[];
 var usedY = [] as number[];
 const randomPos = () => {
-    const Size = {
-        width: 6000,
-        height: 6000
-    }
     var pos = {
-        x: Math.round(Math.random() * Size.width),
-        y: Math.round(Math.random() * Size.height),
+        x: Math.round(Math.random() * 100),
+        y: Math.round(Math.random() * 100),
         z: Math.random() + .2
     }
     if (usedX.includes(pos.x) || usedY.includes(pos.y)) return randomPos();
