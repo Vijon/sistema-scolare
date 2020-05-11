@@ -1,6 +1,6 @@
 import * as React from "react";
 import { route } from "../services/Router";
-import { get } from '../services/Config'
+import { get, isDemo } from '../services/Config'
 import Alert from '../components/Fundamentals/Alert';
 import AddHome from '../components/AddHome/AddHome';
 import Nav from '../components/Nav/Nav';
@@ -9,6 +9,7 @@ import Auth from '../containers/Auth';
 import Universe from '../containers/Universe';
 import World from '../containers/World';
 import MapEditor from '../containers/MapEditor';
+import Demo from "./Demo/Demo";
 
 interface Props {
   user?: any;
@@ -20,6 +21,7 @@ interface Props {
 interface State {
   // UI
   loading: boolean;
+  demo: boolean;
   section: "SPLASH" | "AUTH" | "UNIVERSE" | "WORLD" | "EDITOR";
   planet?: any;
 
@@ -30,6 +32,7 @@ class App extends React.Component<Props, State> {
     state = {
       loading: true,
       section: "SPLASH",
+      demo: isDemo()
     } as State;
 
   componentWillReceiveProps( nextProps: Props ) {
@@ -90,7 +93,7 @@ class App extends React.Component<Props, State> {
 
   render() {
     const { user, alert, onLogout, onDismissAlert } = this.props;
-    const { loading, section, planet } = this.state;
+    const { loading, demo, section, planet } = this.state;
     if (loading) {
       return null; //<Loading />;
     }
@@ -123,7 +126,11 @@ class App extends React.Component<Props, State> {
         break;
         case 'AUTH':
             props = { ...props };
-            return <><Auth {...props} />{putAlert()}</>
+            return <>
+              <Auth {...props} />
+              {putAlert()}
+              {demo && <Demo onDismiss={() => this.setState({demo: false})} />}
+            </>
         break;
         case 'UNIVERSE':
             props = { ...props };
