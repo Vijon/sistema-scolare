@@ -1,0 +1,19 @@
+.Demo {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+    background-color: rgba(0,0,0,.8);
+    color: #fff;
+
+    > div {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 80%;
+        height: 80%;
+        transform: translate(-50%, -50%);
+        padding: .5em;
+        background-color: #9A0000;
+    }
+}

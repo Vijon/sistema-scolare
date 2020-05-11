@@ -20,6 +20,10 @@ export const get = (key: string): any => {
     }
 };
 
+export const isDemo = () => {
+    return !!process.env.REACT_APP_DEMO_MODE;
+}
+
 const WEBFONTS = ['VT323'];
 
 var $loadedFont = false;
